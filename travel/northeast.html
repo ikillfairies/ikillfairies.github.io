@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- So meta -->
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <title>Jeffrey Yan</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet" type="text/css">
+  <link href="style.css" rel="stylesheet" type="text/css" media="all"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script> <!-- JQuery color library -->
+  <script src="script.js"></script>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+<body onload="loadPage('northeast', 5)">
+
+<div id="bg0"></div>
+<div id="overlay"></div>
+
+<div id="navBar">
+  <div id="expandNavBar" onclick="showNavBar()">
+    <div id="rightArrowOuter"></div>
+    <div id="rightArrowInner"></div>
+  </div>
+  <nav>
+    <a class="navButton" id="home" onclick="navLink('index')">HOME</a>
+    <a class="navButton" id="travel" onclick="navLink('travel')">TRAVEL</a>
+    <a class="navButton" id="projects" onclick="navLink('projects')">PROJECTS</a>
+    <a class="navButton" id="contact" onclick="navLink('contact')">CONTACT</a>
+  </nav>
+</div>
+
+<div id="text0">
+  <h1>NORTHEAST</h1>
+  <h4>Pictures of New England, mostly just Massachussetts though. People here don't really have a weird accent, but if you go to Gloucester (pronounced Gloss-ter), you might find a few. Pretty nice place during the summer.</h4>
+  <div id="travelBar"
+    <!-- Buttons for different travel pages -->
+    <p id="midwest" class="button" onclick="travelLink('midwest')">MIDWEST</p>
+    <p id="northeast" class="button">NORTHEAST</p>
+    <p id="mexico" class="button">MEXICO</p>
+    <p id="china" class="button">CHINA</p>
+    <p id="japan" class="button">JAPAN</p>
+    <p id="europe" class="button">EUROPE</p>
+  </div>
+</div>
+
+<!-- Stack of divs for backgrounds -->
+<div id="divStack">
+  <div class="bg" id="bg1"></div>
+  <div class="bg" id="bg2"></div>
+  <div class="bg" id="bg3"></div>
+  <div class="bg" id="bg4"></div>
+  <div class="bg" id="bg5"></div>
+  <div class="bg" id="bg6"></div>
+  <div class="bg" id="bg7"></div>
+  <div class="bg" id="bg8"></div>
+  <div class="bg" id="bg9"></div>
+  <div class="bg" id="bg10"></div>
+  <div class="bg" id="bg11"></div>
+  <div class="bg" id="bg12"></div>
+</div>
+
+<div id="text1"></div>
+
+</body>
+</html>

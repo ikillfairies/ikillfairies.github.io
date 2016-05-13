@@ -1,0 +1,197 @@
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* No clicking non text stuff --------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------------ */
+body { 
+  background-color: #374646;
+  overflow-x: hidden;
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Lato';
+  color: #CFD8DC;
+  cursor: default;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* Background and Main divs ----------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------------ */
+.bgTransition {
+  background: no-repeat center center;
+  background-size: cover;
+  position: absolute;
+  display: table;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+}
+
+#bgTop {
+  z-index: -1;
+}
+
+#bgBot {
+  z-index: -2;
+}
+
+#overlay {
+  background-color: rgba(45, 45, 40, 0.85);
+  position: absolute;
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+
+#content {
+  display: table;
+  position: absolute;
+  height: calc(100% - 35px);
+  width: 100%;
+  margin-top: 35px;
+  -moz-user-select: text;
+  -khtml-user-select: text;
+  -webkit-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+  opacity: 0;
+}
+
+#divStack {
+  position: fixed;
+  overflow: hidden;
+  display: none;
+  top: 0px;
+  width: 100%;
+  height: 100vh;
+  z-index: -3;
+}
+
+.bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* Navigation bar and buttons on top -------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------------ */
+#navBar {
+  background-color: rgba(20, 20, 20, 0.6);
+  position: absolute;
+  display: table;
+  text-align: center;
+  margin-top: 0px;
+  height: 35px;
+  width: 100%;
+  z-index: 1;
+}
+
+.navButton {
+  display: inline-block; 
+  padding-top: 9px;
+  padding-bottom: 11px;
+  font-size: 20px;
+  text-decoration: none;
+  cursor: pointer;
+}
+@media all and (min-width: 0px)   { .navButton{padding-left: 15px;  padding-right: 15px;  }}
+@media all and (min-width: 525px) { .navButton{padding-left: 20px; padding-right: 20px; }}
+
+.navButton.active {
+  color: #FFB74D; 
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* Travel bar and buttons ------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------------ */
+#travelBar {
+  margin-top: calc(30vh + 275px);
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  display: none;
+  opacity: 0;
+  z-index: 2;
+}
+
+.button { 
+  background-color: rgba(80, 85, 90, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: inline-block;
+  margin-top: 0px;
+  margin-bottom: 3px;
+  padding: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.button.active {
+  color: #FFB74D; 
+  background-color: rgba(35, 35, 35, 0.9);
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* Text and stuff --------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------------ */
+h1 {
+  margin-top: 30vh;
+  margin-bottom: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-weight: 100;
+  opacity: 1;
+}
+@media all and (min-width: 0px)   { h1{ width: 95%;   font-size: 13vw;  }}
+@media all and (min-width: 800px) { h1{ width: 760px; font-size: 100px; }}
+
+h2 {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-weight: 100;
+  -moz-user-select: text;
+  -khtml-user-select: text;
+  -webkit-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+@media all and (min-width: 0px)   { h2{ width: 95%;   font-size: 4vw;  }}
+@media all and (min-width: 800px) { h2{ width: 760px; font-size: 35px; }}
+
+h4 {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5vh;
+  line-height: 1.5;
+  text-align: justify;
+  font-size: 17px;
+  font-weight: 100;
+  opacity: 1;
+}
+@media all and (min-width: 0px)   { h4{ width: 95%;   }}
+@media all and (min-width: 800px) { h4{ width: 760px; }}
+
+.contactText {
+  text-align: center;
+}
+
+#textBar {
+  background-color: rgba(50, 50, 50, 0.8);
+  position: fixed;
+  display: table;
+  bottom: 0px;
+  height: 60px;
+  width: 100%;
+  z-index: 1;
+  display: none;
+}

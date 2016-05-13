@@ -1,0 +1,19 @@
+<h1 style="opacity: 1;">MIDWEST</h1>
+<h4 style="opacity: 1;">Pictures of Maaaadison (Madison in a Midwestern accent), Chicago, and St. Louis. People here drive slow (i.e. at the speed limit), like to say they're 'Midwest nice'. Needless to say it's a horrible place to be and I don't recommend going.</h4>
+<div id="divStack">
+  <div class="bg" id="bg1"></div>
+  <div class="bg" id="bg2"></div>
+  <div class="bg" id="bg3"></div>
+  <div class="bg" id="bg4"></div>
+  <div class="bg" id="bg5"></div>
+  <div class="bg" id="bg6"></div>
+  <div class="bg" id="bg7"></div>
+  <div class="bg" id="bg8"></div>
+  <div class="bg" id="bg9"></div>
+  <div class="bg" id="bg10"></div>
+  <div class="bg" id="bg11"></div>
+  <div class="bg" id="bg12"></div>
+</div>
+<div id="textBar">
+  <h2 id="imageTitle"></h2>
+</div>
