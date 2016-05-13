@@ -86,7 +86,6 @@ function navLink(page) {
       $('body').css({'overflow-y': '', 'height': '100%'});
     }, textDelay);
     if (scrollPosition < 100) $('#divStack').css({'display': 'none'});
-    }
     else {
       $('body').css({'overflow-y': 'hidden'});
       $('#overlay, #bgTop, #bgBot').css({'position': 'fixed', 'top': '-100%'}).animate({top: '0px'}, textDelay);
