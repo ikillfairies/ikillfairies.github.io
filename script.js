@@ -204,7 +204,7 @@ function setTravelContent(page, switchPage) {
     $('body').height(String((scrollMultiplier * numDivs + 1) * 100 - 1) + 'vh');
     $bg1.css({'opacity': '0'});
     $bg1.css('background', 'url(./' + page + '/bg1.jpg) no-repeat center center').css('background-size', 'cover');
-  }, bgDelay + 100);
+  }, bgDelay);
   setTimeout(function() { $('#divStack').css({'display': 'block'}); }, bgDelay + 50);
 }
 
