@@ -201,13 +201,13 @@ function setTravelContent(page, switchPage) {
   setTimeout(function() {
     numDivs = $('.bg').length - 1; // Get # of bgDivs to set body height
     $('body').height(String((scrollMultiplier * numDivs + 1) * 100 - 1) + 'vh');
-  }, bgDelay);
+  }, textDelay);
   setTimeout(function() { 
     $('#divStack').css({'display': 'block'}); 
     var $bg1 = $('#bg1');
     $bg1.css({'opacity': '0'});
     $bg1.css('background', 'url(./' + page + '/bg1.jpg) no-repeat center center').css('background-size', 'cover');
-  }, bgDelay + 50);
+  }, textDelay + 50);
 }
 
 /* ------------------------------------------------------------------------------------------------------------------ */
