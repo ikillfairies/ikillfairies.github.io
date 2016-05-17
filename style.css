@@ -148,6 +148,7 @@ h1 {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+  font-weight: 300;
   opacity: 1;
 }
 @media all and (min-width: 0px)   { h1{ width: 95%;   font-size: 13vw;  }}
@@ -159,6 +160,7 @@ h2 {
   margin-right: auto;
   margin-top: 5px;
   margin-bottom: 5px;
+  font-weight: 300;
   -moz-user-select: text;
   -khtml-user-select: text;
   -webkit-user-select: text;
@@ -175,6 +177,7 @@ h4 {
   line-height: 1.5;
   text-align: justify;
   font-size: 17px;
+  font-weight: 300;
   opacity: 1;
 }
 @media all and (min-width: 0px)   { h4{ width: 95%;   }}
