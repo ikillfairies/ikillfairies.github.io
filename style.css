@@ -6,7 +6,7 @@ body {
   overflow-x: hidden;
   margin: 0px;
   padding: 0px;
-  font-family: 'Lato';
+  font-family: 'Roboto', sans-serif;
   color: #CFD8DC;
   cursor: default;
   -webkit-touch-callout: none;
