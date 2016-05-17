@@ -1,6 +1,6 @@
 /* Global variables for normal pages */
-var bgDelay = 700;         // Transition delay between pages in miliseconds
-var textDelay = 300;       // Transition delay for text (should be < bgDelay / 2 for full fade out and fade in)
+var bgDelay = 600;         // Transition delay between pages in miliseconds
+var textDelay = 250;       // Transition delay for text (should be < bgDelay / 2 for full fade out and fade in)
 var locked = false;        // Page transition lock
 
 /* Global variables for travel pages */
@@ -217,7 +217,7 @@ function setTravelContent(page, switchPage) {
 /* Enable the mouseover and mouseout hover effect for the travelBar buttons */
 function setButtonHover() {
   $('.button').mouseover(function() {
-    $(this).stop().animate({color: '#DFCDAC', backgroundColor: 'rgba(40, 40, 40, 0.8)'}, 150)});
+    $(this).stop().animate({color: '#DFCDAC', backgroundColor: 'rgba(40, 40, 40, 0.7)'}, 150)});
   $('.button').mouseout(function() {
     $(this).stop().animate({color: '#CFD8DC', backgroundColor: 'rgba(80, 85, 90, 0.2)'}, 400)});
 }
@@ -246,7 +246,7 @@ function setNavBar(page) {
 /* Sets an active button and resets the others */
 function setTravelBar(page) {
   $('.button').mouseover(function() {
-    $(this).stop().animate({color: '#DFCDAC', backgroundColor: 'rgba(50, 50, 50, 0.7)'}, 150)});
+    $(this).stop().animate({color: '#DFCDAC', backgroundColor: 'rgba(40, 40, 40, 0.7)'}, 150)});
   $('.button').mouseout(function() {
     $(this).stop().animate({color: '#CFD8DC', backgroundColor: 'rgba(80, 85, 90, 0.2)'}, 400)});
   $('.button.active').css({'color': '#CFD8DC', 'background-color': 'rgba(80, 85, 90, 0.2)'}).removeClass('active');
