@@ -1,12 +1,9 @@
-/* Global variables for normal pages */
 var bgDelay = 600;          // Transition delay between pages in miliseconds
 var textDelay = 250;        // Transition delay for text (should be < bgDelay / 2 for full fade out and fade in)
 var scrollMultiplier = 1.8; // Multiplier for how much scroll height each bg div gets
-
-/* Shared globals */
-var locked = false;      // Page Transition lock
-var currentPage;         // Page you're currently on
-var pageType = 'normal'; // Current page type. Either 'travel' or 'normal'... Set to 'normal' by default
+var locked = false;         // Page Transition lock
+var currentPage;            // Page you're currently on
+var pageType = 'normal';    // Current page type. Either 'travel' or 'normal'... Set to 'normal' by default
 
 /* Set a few things when first loading the page */
 $(document).ready(function() {
