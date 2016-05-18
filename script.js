@@ -1,26 +1,15 @@
 /* Global variables for normal pages */
-var bgDelay = 600;         // Transition delay between pages in miliseconds
-var textDelay = 250;       // Transition delay for text (should be < bgDelay / 2 for full fade out and fade in)
-var locked = false;        // Page transition lock
-
-/* Global variables for travel pages */
+var bgDelay = 600;          // Transition delay between pages in miliseconds
+var textDelay = 250;        // Transition delay for text (should be < bgDelay / 2 for full fade out and fade in)
 var scrollMultiplier = 1.8; // Multiplier for how much scroll height each bg div gets
-var scrollPosition = 0;     // $(window).scrollTop() initialized to 0 (scrollbar at top of page)
-var windowHeight;           // $(window).height()
-var lowerBound;             // Lower bound of transition range
-var upperBound;             // Upper bound of transition range...
-var divIndex = 0;           // Starts at 0 always because I'm forcing scrollTop(0) on refresh
-var numDivs;
 
 /* Shared globals */
+var locked = false;      // Page Transition lock
 var currentPage;         // Page you're currently on
 var pageType = 'normal'; // Current page type. Either 'travel' or 'normal'... Set to 'normal' by default
 
 /* Set a few things when first loading the page */
 $(document).ready(function() {
-  //$('#expandNavBar').mouseover(function() { $(this).stop().animate({color: '#FFB74D'}, 250)});
-  //$('#expandNavBar').mouseout(function() { $(this).stop().animate({color: '#CFD8DC'}, 400)});
-  /* If on IE or Edge, remove the jumping shit on fixed backgrounds */
   if(navigator.userAgent.match(/Trident\/7\./) || navigator.userAgent.match(/Edge\/13\./)) {
     $('body').on("mousewheel", function () { // Note this doesn't fix touchpad scroll for IE Edge but screw Edge users
       event.preventDefault(); 
@@ -267,6 +256,14 @@ function setTravelBar(page) {
 /* ------------------------------------------------------------------------------------------------------------------ */
 /* Travel page scroll effect ---------------------------------------------------------------------------------------- */
 /* ------------------------------------------------------------------------------------------------------------------ */
+
+/* Global variables for travel pages */
+var scrollPosition = 0;     // $(window).scrollTop() initialized to 0 (scrollbar at top of page)
+var windowHeight;           // $(window).height()
+var lowerBound;             // Lower bound of transition range
+var upperBound;             // Upper bound of transition range...
+var divIndex = 0;           // Starts at 0 always because I'm forcing scrollTop(0) on refresh
+var numDivs;
 
 /* Need to account for the change in scrollbar position on window resize */
 $(window).resize(function() { 
