@@ -5,22 +5,21 @@ var locked = false;         // Page Transition lock
 var currentPage;            // Page you're currently on
 var pageType = 'normal';    // Current page type. Either 'travel' or 'normal'... Set to 'normal' by default
 
-/* Set a few things when first loading the page */
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* Initial stuff set at the first (and only true) page load --------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------------ */
+
+/* Fix the shitty scroll jumping issue on IE and Edge (kinda) */
 $(document).ready(function() {
   if(navigator.userAgent.match(/Trident\/7\./) || navigator.userAgent.match(/Edge\/13\./)) {
     $('body').on("mousewheel", function () { // Note this doesn't fix touchpad scroll for IE Edge but screw Edge users
       event.preventDefault(); 
-      var wheelDelta = event.wheelDelta;
-      var currentScrollPosition = window.pageYOffset;
-      window.scrollTo(0, currentScrollPosition - wheelDelta);
+      window.scrollTo(0, window.pageYOffset - event.wheelDelta);
     });
   }
 });
 
-/* ------------------------------------------------------------------------------------------------------------------ */
-/* On popstate (back/forward buttons) ------------------------------------------------------------------------------- */
-/* ------------------------------------------------------------------------------------------------------------------ */
-
+/* On popstate (back and forward buttons) call an instant page switch */
 $(window).bind('popstate', function() {                     // Executed on browser back button press
   var page = location.pathname.split('/')[1].split('.')[0]; // Some string manipulation crap to get new page name
   if (page == '') fastNavLink('home');
@@ -28,28 +27,17 @@ $(window).bind('popstate', function() {                     // Executed on brows
   else fastNavLink(page);
 });
 
+/* If a user refresh, force them to top of page (unfortunately also called when leaving the page) */
 $(window).on('beforeunload', function() { $(window).scrollTop(0); });
 
-/* ------------------------------------------------------------------------------------------------------------------ */
-/* Individual page load functions called from body of each page ----------------------------------------------------- */
-/* ------------------------------------------------------------------------------------------------------------------ */
-
-/* Index/Home, Travel, Projects, and Contact Page (so far) */
-function normalPage(page) {
+/* Initial load called from body of HTML */
+function initialLoad(page, pageType) {
   currentPage = page;
   setNavBar(page);       // Enable hover and onclick for navBar buttons
   setButtonHover();      // Set mouseover and mouseout for travel buttons
   $('#bgBot').animate({opacity: 1}, bgDelay); // Fade in the background
-  navLink(page);
-}
-
-/* All travel pages (except the travel page itself lol) */
-function travelPage(page) {
-  currentPage = page;
-  setNavBar('travel'); // Enable hover and onclick for navBar buttons
-  setButtonHover();    // Set mouseover and mouseout for travel buttons
-  $('#bgBot').animate({opacity: 1}, bgDelay); // Fade in the background
-  travelTo(page, false);
+  if (pageType == 'normal') navLink(page);
+  else if (pageType == 'travel') travelTo(page, false);
 }
 
 /* ------------------------------------------------------------------------------------------------------------------ */
@@ -68,9 +56,9 @@ function navLink(page) {
     setTimeout(function() { 
       $("html, body").scrollTop(0);
       $('body').css({'overflow-y': '', 'height': '100%'});
-      $('.bgTransition').css({'width': '100%'});
-      $('#navBar').css({'width': '100%'});
-      $('#travelBar').css({'width': '100%'});
+      //$('.bgTransition').css({'width': '100%'});
+      //$('#navBar').css({'width': '100%'});
+      //$('#travelBar').css({'width': '100%'});
     }, textDelay);
     if (scrollPosition < 100) $('#divStack').css({'display': 'none'});
     else {
@@ -127,9 +115,9 @@ function fastNavLink(page) {
   $('#bgTop, #bgBot').css({'background-image': 'url(' + bgImg + ')'});
   $('#content').load(page + 'Content');
   $('body').css({'height': '100%'});
-  $('.bgTransition').css({'width': '100%'});
-  $('#navBar').css({'width': '100%'});
-  $('#travelBar').css({'width': '100%'});
+  //$('.bgTransition').css({'width': '100%'});
+  //$('#navBar').css({'width': '100%'});
+  //$('#travelBar').css({'width': '100%'});
   toggleTravelBar(page);
   setTravelBar(page);     
   setNavBar(page);
@@ -148,9 +136,9 @@ function fastTravelTo(page) {
   setTimeout(function() {
     numDivs = $('.bg').length - 1;
     $('body').height(String((scrollMultiplier * numDivs + 1) * 100 - 1) + 'vh');
-    $('.bgTransition').css({'width': 'calc(100% + 17px)'});
-    $('#navBar').css({'width': 'calc(100% + 17px)'});
-    $('#travelBar').css({'width': 'calc(100% + 17px)'});
+    //$('.bgTransition').css({'width': 'calc(100% + 17px)'});
+    //$('#navBar').css({'width': 'calc(100% + 17px)'});
+    //$('#travelBar').css({'width': 'calc(100% + 17px)'});
     $('#bg1').css({'opacity': '0'});
     $('#bg1').css('background', 'url(./' + page + '/bg1.jpg) no-repeat center center').css('background-size', 'cover');
     $('#divStack').css({'display': 'block'});
@@ -194,9 +182,9 @@ function setTravelContent(page, switchPage) {
   setTimeout(function() {
     numDivs = $('.bg').length - 1; // Get # of bgDivs to set body height
     $('body').height(String((scrollMultiplier * numDivs + 1) * 100 - 1) + 'vh');
-    $('.bgTransition').css({'width': 'calc(100% + 17px)'});
-    $('#navBar').css({'width': 'calc(100% + 17px)'});
-    $('#travelBar').css({'width': 'calc(100% + 17px)'});
+    //$('.bgTransition').css({'width': 'calc(100% + 17px)'});
+    //$('#navBar').css({'width': 'calc(100% + 17px)'});
+    //$('#travelBar').css({'width': 'calc(100% + 17px)'});
   }, textDelay);
   setTimeout(function() { 
     $('#divStack').css({'display': 'block'}); 
@@ -209,6 +197,8 @@ function setTravelContent(page, switchPage) {
 /* ------------------------------------------------------------------------------------------------------------------ */
 /* Button animation and visibility related -------------------------------------------------------------------------- */
 /* ------------------------------------------------------------------------------------------------------------------ */
+
+// soooo i think i need to somehow consolidate setButtonhover, toggleTravelBar, and setTravelBar into setTravelBar, this shit is retarded
 
 /* Enable the mouseover and mouseout hover effect for the travelBar buttons */
 function setButtonHover() {
