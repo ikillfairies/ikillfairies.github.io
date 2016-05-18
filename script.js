@@ -201,6 +201,9 @@ function setTravelContent(page, switchPage) {
   setTimeout(function() {
     numDivs = $('.bg').length - 1; // Get # of bgDivs to set body height
     $('body').height(String((scrollMultiplier * numDivs + 1) * 100 - 1) + 'vh');
+    $('.bgTransition').css({'width': 'calc(100% + 17px)'});
+    $('#navBar').css({'width': 'calc(100% + 17px)'});
+    $('#travelBar').css({'width': 'calc(100% + 17px)'});
   }, textDelay);
   setTimeout(function() { 
     $('#divStack').css({'display': 'block'}); 
