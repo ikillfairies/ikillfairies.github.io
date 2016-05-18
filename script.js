@@ -33,11 +33,16 @@ $(window).on('beforeunload', function() { $(window).scrollTop(0); });
 /* Initial load called from body of HTML */
 function initialLoad(page, pageType) {
   currentPage = page;
-  setNavBar(page);       // Enable hover and onclick for navBar buttons
-  setButtonHover();      // Set mouseover and mouseout for travel buttons
+  setButtonHover();                           // Set mouseover and mouseout for travel buttons
   $('#bgBot').animate({opacity: 1}, bgDelay); // Fade in the background
-  if (pageType == 'normal') navLink(page);
-  else if (pageType == 'travel') travelTo(page, false);
+  if (pageType == 'normal') {
+    setNavBar(page);
+    navLink(page);                            // The part where you actually load the page lol
+  }
+  else if (pageType == 'travel') {
+    setNavBar('travel');
+    travelTo(page, false);
+  }
 }
 
 /* ------------------------------------------------------------------------------------------------------------------ */
