@@ -22,7 +22,7 @@ $(document).ready(function() {
 /* On popstate (back and forward buttons) call an instant page switch */
 $(window).bind('popstate', function() {                     // Executed on browser back button press
   var page = location.pathname.split('/')[1].split('.')[0]; // Some string manipulation crap to get new page name
-  if (page == '') fastNavLink('home');
+  if (page == '' || page == 'index') fastNavLink('home');
   else if (page == 'midwest') fastTravelTo(page);
   else fastNavLink(page);
 });
