@@ -3,7 +3,7 @@ var textDelay = 250;        // Transition delay for text (should be < bgDelay / 
 var scrollMultiplier = 1.8; // Multiplier for how much scroll height each bg div gets
 var locked = false;         // Page Transition lock
 var currentPage;            // Page you're currently on
-var pageType = 'normal';    // Current page type. Either 'travel' or 'normal'... Set to 'normal' by default
+var pageType;               // Current page type. Either 'travel' or 'normal'
 
 /* ------------------------------------------------------------------------------------------------------------------ */
 /* Initial stuff set at the first (and only true) page load --------------------------------------------------------- */
