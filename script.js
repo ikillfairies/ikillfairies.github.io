@@ -53,15 +53,13 @@ function normalPage(page) {
   currentPage = page;
   setNavBar(page);       // Enable hover and onclick for navBar buttons
   setButtonHover();      // Set mouseover and mouseout for travel buttons
-  toggleTravelBar(page); // Make travelBar appear if this is travel.html
   $('#bgBot').animate({opacity: 1}, bgDelay); // Fade in the background
-  setBG(getRandomBG(page));
-  setContent(page, false);
+  navLink(page);
 }
 
 /* All travel pages (except the travel page itself lol) */
 function travelPage(page) {
-  
+  currentPage = page;
   setNavBar('travel'); // Enable hover and onclick for navBar buttons
   setButtonHover();    // Set mouseover and mouseout for travel buttons
   $('#bgBot').animate({opacity: 1}, bgDelay); // Fade in the background
