@@ -49,11 +49,10 @@ body {
 }
 
 #content {
-  display: table;
   position: absolute;
-  height: calc(100% - 35px);
+  display: table;
+  height: 100%;
   width: 100%;
-  margin-top: 35px;
   -moz-user-select: text;
   -khtml-user-select: text;
   -webkit-user-select: text;
@@ -87,21 +86,19 @@ body {
   display: table;
   text-align: center;
   margin-top: 0px;
-  height: 35px;
   width: 100%;
-  z-index: 2;
+  z-index: 1;
 }
 
 .navButton {
   display: inline-block; 
-  padding-top: 9px;
-  padding-bottom: 11px;
+  padding: 10px;
   font-size: 20px;
   text-decoration: none;
   cursor: pointer;
 }
-@media all and (min-width: 0px)   { .navButton{padding-left: 15px;  padding-right: 15px;  }}
-@media all and (min-width: 525px) { .navButton{padding-left: 20px; padding-right: 20px; }}
+@media all and (min-width: 0px)   { .navButton{padding-left: 10px;  padding-right: 10px;  }}
+@media all and (min-width: 525px) { .navButton{padding-left: 20px; padding-right: 20px;   }}
 
 .navButton.active {
   color: #FFB74D; 
