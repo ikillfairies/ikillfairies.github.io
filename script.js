@@ -84,6 +84,9 @@ function navLink(page) {
     setTimeout(function() { 
       $("html, body").scrollTop(0);
       $('body').css({'overflow-y': '', 'height': '100%'});
+      $('.bgTransition').css({'width': '100%'});
+      $('#navBar').css({'width': '100%'});
+      $('#travelBar').css({'width': '100%'});
     }, textDelay);
     if (scrollPosition < 100) $('#divStack').css({'display': 'none'});
     else {
@@ -139,7 +142,10 @@ function fastNavLink(page) {
   var bgImg = getRandomBG(page);
   $('#bgTop, #bgBot').css({'background-image': 'url(' + bgImg + ')'});
   $('#content').load(page + 'Content');
-  $('body').css({'height': '100vh'});
+  $('body').css({'height': '100%'});
+  $('.bgTransition').css({'width': '100%'});
+  $('#navBar').css({'width': '100%'});
+  $('#travelBar').css({'width': '100%'});
   toggleTravelBar(page);
   setTravelBar(page);     
   setNavBar(page);
@@ -158,6 +164,9 @@ function fastTravelTo(page) {
   setTimeout(function() {
     numDivs = $('.bg').length - 1;
     $('body').height(String((scrollMultiplier * numDivs + 1) * 100 - 1) + 'vh');
+    $('.bgTransition').css({'width': 'calc(100% + 17px)'});
+    $('#navBar').css({'width': 'calc(100% + 17px)'});
+    $('#travelBar').css({'width': 'calc(100% + 17px)'});
     $('#bg1').css({'opacity': '0'});
     $('#bg1').css('background', 'url(./' + page + '/bg1.jpg) no-repeat center center').css('background-size', 'cover');
     $('#divStack').css({'display': 'block'});
