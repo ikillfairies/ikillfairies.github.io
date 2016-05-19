@@ -53,7 +53,12 @@ function navLink(page) {
   if (locked) return; // If locked, no navBar transition is allowed
   locked = true;      // If not locked, lock
   currentPage = page;                    // Update global page variable to whatever the new page is
-  // if (pageType == 'travel') travelToNormal(page);
+  if (pageType == 'travel') {
+    $('.button.active').stop().animate({ // Fade out the active button
+      color: '#CFD8DC', backgroundColor: 'rgba(80, 85, 90, 0.2)'}, textDelay).removeClass('active');
+    setButtonHover();                    // Re-enable hover effects for travel buttons
+    setTimeout(function() { $('body').css({'overflow-y': '', 'height': '100%'}); }, textDelay);
+  }
   setBG(getRandomBG(page)); // Get random BG and set it
   setContent(page, true);   // Fade out content + load new
   toggleTravelBar(page);    // Set travelBar visibility depending on page being loaded
