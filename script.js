@@ -32,7 +32,7 @@ $(window).on('beforeunload', function() { $(window).scrollTop(0); });
 
 /* Initial load called from body of HTML */
 function initialLoad(page, pageType) {
-  setButtonHover();                           // Set mouseover and mouseout for travel buttons
+  setTravelBar();                             // Set mouseover and mouseout for travel buttons
   $('#bgBot').animate({opacity: 1}, bgDelay); // Fade in the background
   if (pageType == 'normal') {
     setNavBar(page);
@@ -56,7 +56,7 @@ function navLink(page) {
   if (pageType == 'travel') {
     $('.button.active').stop().animate({ // Fade out the active button
       color: '#CFD8DC', backgroundColor: 'rgba(80, 85, 90, 0.2)'}, textDelay).removeClass('active');
-    setButtonHover();                    // Re-enable hover effects for travel buttons
+    setTravelBar();                      // Re-enable hover effects for travel buttons
     setTimeout(function() { $('body').css({'overflow-y': '', 'height': '100%'}); }, textDelay);
     if (scrollPosition >= 1000) {
       $('#overlay, .bgTransition').css({'position': 'fixed', 'top': '-100%'}).animate({top: '0px'}, textDelay);
@@ -197,14 +197,6 @@ function setTravelContent(page, switchPage) {
 /* Button animation and visibility related -------------------------------------------------------------------------- */
 /* ------------------------------------------------------------------------------------------------------------------ */
 // soooo i think i need to somehow consolidate setButtonhover, toggleTravelBar, and setTravelBar into setTravelBar, this shit is retarded
-/* Enable the mouseover and mouseout hover effect for the travelBar buttons */
-function setButtonHover() {
-  $('.button').mouseover(function() {
-    $(this).stop().animate({color: '#DFCDAC', backgroundColor: 'rgba(40, 40, 40, 0.7)'}, 150)});
-  $('.button').mouseout(function() {
-    $(this).stop().animate({color: '#CFD8DC', backgroundColor: 'rgba(80, 85, 90, 0.2)'}, 400)});
-}
-
 /* Display travelBar if currentPage is travel, or if pageType is travel */
 function toggleTravelBar() {
   var $travelBar = $('#travelBar');
