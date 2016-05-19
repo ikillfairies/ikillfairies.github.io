@@ -188,7 +188,7 @@ function setTravelContent(page, switchPage) {
     var $bg1 = $('#bg1');
     $bg1.css({'opacity': '0'});
     $bg1.css('background', 'url(./' + page + '/bg1.jpg) no-repeat center center').css('background-size', 'cover');
-  }, textDelay + 50);
+  }, bgDelay);
 }
 
 /* ------------------------------------------------------------------------------------------------------------------ */
