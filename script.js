@@ -56,7 +56,6 @@ function navLink(page) {
   if (pageType == 'travel') {
     $('.button.active').stop().animate({ // Fade out the active button
       color: '#CFD8DC', backgroundColor: 'rgba(80, 85, 90, 0.2)'}, textDelay).removeClass('active');
-    setTravelBar();                      // Re-enable hover effects for travel buttons
     setTimeout(function() { $('body').css({'overflow-y': '', 'height': '100%'}); }, textDelay);
     if (scrollPosition >= 1000) {
       $('#overlay, .bgTransition').css({'position': 'fixed', 'top': '-100%'}).animate({top: '0px'}, textDelay);
@@ -81,7 +80,7 @@ function navLink(page) {
     setBG(getRandomBG(page));
   }
   pageType = 'normal';
-  toggleTravelBar(page);       // Set travelBar visibility depending on page being loaded
+  setTravelBar(page);       // Set travelBar visibility depending on page being loaded
   $('.navButton').unbind();    // Disable hover effects for navBar during page transition
   if (page != $('.navButton.active').prop('id')) {                                // No animate if already active
     $('.navButton.active').stop().animate({color: '#CFD8DC'}, bgDelay);           // Fade out current active link
@@ -99,7 +98,7 @@ function travelTo(page, backPressed, switchPage) {
   locked = true;
   currentPage = page;           // Update global page variable to whatever the new page is
   pageType = 'travel';
-  toggleTravelBar(page);        // Set travelBar visibility depending on page being loaded
+  setTravelBar(page);        // Set travelBar visibility depending on page being loaded
   setBG(page + '/bg0.jpg');     // Set the new background
   $('.button').unbind();        // No mouseover effects on the buttons while transitioning pages
   $('.button.active').animate({ // Fade out old active button
@@ -123,7 +122,6 @@ function fastNavLink(page) {
   $('#bgTop, #bgBot').css({'background-image': 'url(' + bgImg + ')'});
   $('#content').load(page + 'Content');
   $('body').css({'height': '100%'});
-  toggleTravelBar(page);
   setTravelBar(page);     
   setNavBar(page);
 }
@@ -135,7 +133,6 @@ function fastTravelTo(page) {
   $('#content').html('');
   $('#bgtop, #bgBot').css({'background-image': 'url(' + page + '/bg0.jpg)'});
   $('#content').load(page + 'Content');
-  toggleTravelBar('travel');
   setTravelBar(page);
   setNavBar('travel');
   setTimeout(function() {
@@ -196,18 +193,6 @@ function setTravelContent(page, switchPage) {
 /* ------------------------------------------------------------------------------------------------------------------ */
 /* Button animation and visibility related -------------------------------------------------------------------------- */
 /* ------------------------------------------------------------------------------------------------------------------ */
-// soooo i think i need to somehow consolidate setButtonhover, toggleTravelBar, and setTravelBar into setTravelBar, this shit is retarded
-/* Display travelBar if currentPage is travel, or if pageType is travel */
-function toggleTravelBar() {
-  var $travelBar = $('#travelBar');
-  if (currentPage == 'travel' || pageType == 'travel') {
-    $travelBar.css({'display': 'block'}).animate({opacity: 1}, textDelay);
-  }     
-  else {
-    $travelBar.animate({opacity: 0}, textDelay);
-    setTimeout(function() { $travelBar.css({'display': 'none'}); }, textDelay);
-  }
-}
 
 /* Sets an active navButton and resets the others */
 function setNavBar(page) {
@@ -220,6 +205,14 @@ function setNavBar(page) {
 
 /* Sets an active button and resets the others */
 function setTravelBar(page) {
+  var $travelBar = $('#travelBar');
+  if (currentPage == 'travel' || pageType == 'travel') 
+    $travelBar.css({'display': 'block'}).animate({opacity: 1}, textDelay);
+  }     
+  else {
+    $travelBar.animate({opacity: 0}, textDelay);
+    setTimeout(function() { $travelBar.css({'display': 'none'}); }, textDelay);
+  }
   $('.button').mouseover(function() {
     $(this).stop().animate({color: '#DFCDAC', backgroundColor: 'rgba(40, 40, 40, 0.7)'}, 150)});
   $('.button').mouseout(function() {
