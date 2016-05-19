@@ -82,7 +82,7 @@ body {
 /* ------------------------------------------------------------------------------------------------------------------ */
 #navBar {
   background-color: rgba(20, 20, 20, 0.6);
-  position: absolute;
+  position: fixed;
   display: table;
   text-align: center;
   margin-top: 0px;
