@@ -60,6 +60,8 @@ function navLink(page) {
     setTimeout(function() { $('body').css({'overflow-y': '', 'height': '100%'}); }, textDelay);
     if (scrollPosition >= 1000) {
       $('#overlay, .bgTransition').css({'position': 'fixed', 'top': '-100%'}).animate({top: '0px'}, textDelay);
+      setContent(page, true);
+      setBG(getRandomBG(page));
     }
     else if (scrollPosition < 1000) {
       $('html, body').animate({scrollTop: 0}, textDelay);
