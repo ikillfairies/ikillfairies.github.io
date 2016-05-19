@@ -60,18 +60,18 @@ function navLink(page) {
     setButtonHover();                    // Re-enable hover effects for travel buttons
     setTimeout(function() { $('body').css({'overflow-y': '', 'height': '100%'}); }, textDelay);
     if (scrollPosition >= 1000) {
-      $('#overlay, #bgTop, #bgBot').css({'position': 'fixed', 'top': '-100%'}).animate({top: '0px'}, textDelay);
+      $('#overlay, .bgTransition').css({'position': 'fixed', 'top': '-100%'}).animate({top: '0px'}, textDelay);
     }
     else if (scrollPosition < 1000) {
       $('html, body').animate({scrollTop: 0}, textDelay);
     }
     setTimeout(function() {
-      $('#overlay, #bgTop, #bgBot').css({'position':' absolute', 'top': ''});
+      $('#overlay, .bgTransition').css({'position':' absolute', 'top': ''});
       $('body').css({'overflow-y': '', 'height': '100%'});
     }, bgDelay); 
 
   }
-  else 
+
   setBG(getRandomBG(page)); // Get random BG and set it
   setContent(page, true);   // Fade out content + load new
   toggleTravelBar(page);    // Set travelBar visibility depending on page being loaded
