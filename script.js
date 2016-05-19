@@ -53,31 +53,7 @@ function navLink(page) {
   if (locked) return; // If locked, no navBar transition is allowed
   locked = true;      // If not locked, lock
   currentPage = page;                    // Update global page variable to whatever the new page is
-  if (pageType == 'travel') {            // Called for transition from travel page to normal page
-    $('.button.active').stop().animate({ // Fade out the active button
-      color: '#CFD8DC', backgroundColor: 'rgba(80, 85, 90, 0.2)'}, textDelay).removeClass('active');
-    setButtonHover();                    // Re-enable hover effects for travel buttons
-    setTimeout(function() { 
-      $("html, body").scrollTop(0);
-      $('body').css({'overflow-y': '', 'height': '100%'});
-    }, textDelay);
-    if (scrollPosition == 0) $('#divStack').css({'display': 'none'});
-    else {
-      $('body').css({'overflow-y': 'hidden'});
-      if (scrollPosition >= 1000) {
-        $('#overlay, #bgTop, #bgBot').css({'position': 'fixed', 'top': '-100%'}).animate({top: '0px'}, textDelay);
-      }
-      else if (scrollPosition < 1000) {
-        var topString = '-' + String(scrollPosition / 10) + '%';
-        $('#overlay, #bgTop, #bgBot').css({'position': 'fixed', 'top': topString}).animate({top: '0px'}, textDelay);
-      }
-      setTimeout(function() {
-        $('#overlay, #bgTop, #bgBot').css({'position':' absolute', 'top': ''});
-        $('body').css({'overflow-y': '', 'height': '100%'});
-      }, bgDelay); 
-    }
-    pageType = 'normal';
-  }
+  // if (pageType == 'travel') travelToNormal(page);
   setBG(getRandomBG(page)); // Get random BG and set it
   setContent(page, true);   // Fade out content + load new
   toggleTravelBar(page);    // Set travelBar visibility depending on page being loaded
@@ -144,6 +120,32 @@ function fastTravelTo(page) {
     $('#bg1').css('background', 'url(./' + page + '/bg1.jpg) no-repeat center center').css('background-size', 'cover');
     $('#divStack').css({'display': 'block'});
   }, textDelay);
+}
+
+function travelToNormal(page) {
+  $('.button.active').stop().animate({ // Fade out the active button
+    color: '#CFD8DC', backgroundColor: 'rgba(80, 85, 90, 0.2)'}, textDelay).removeClass('active');
+  setButtonHover();                    // Re-enable hover effects for travel buttons
+  setTimeout(function() { 
+    $("html, body").scrollTop(0);
+    $('body').css({'overflow-y': '', 'height': '100%'});
+  }, textDelay);
+  if (scrollPosition == 0) $('#divStack').css({'display': 'none'});
+  else {
+    $('body').css({'overflow-y': 'hidden'});
+    if (scrollPosition >= 1000) {
+      $('#overlay, #bgTop, #bgBot').css({'position': 'fixed', 'top': '-100%'}).animate({top: '0px'}, textDelay);
+    }
+    else if (scrollPosition < 1000) {
+      var topString = '-' + String(scrollPosition / 10) + '%';
+      $('#overlay, #bgTop, #bgBot').css({'position': 'fixed', 'top': topString}).animate({top: '0px'}, textDelay);
+    }
+    setTimeout(function() {
+      $('#overlay, #bgTop, #bgBot').css({'position':' absolute', 'top': ''});
+      $('body').css({'overflow-y': '', 'height': '100%'});
+    }, bgDelay); 
+  }
+  pageType = 'normal';
 }
 
 /* ------------------------------------------------------------------------------------------------------------------ */
