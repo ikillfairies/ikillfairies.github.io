@@ -1,5 +1,5 @@
 var bgDelay = 600;          // Transition delay between pages in miliseconds
-var textDelay = 250;        // Transition delay for text (should be < bgDelay / 2 for full fade out and fade in)
+var textDelay = 275;        // Transition delay for text (should be < bgDelay / 2 for full fade out and fade in)
 var scrollMultiplier = 1.8; // Multiplier for how much scroll height each bg div gets
 var locked = false;         // Page Transition lock
 var currentPage;            // Page you're currently on
@@ -61,10 +61,15 @@ function navLink(page) {
       $("html, body").scrollTop(0);
       $('body').css({'overflow-y': '', 'height': '100%'});
     }, textDelay);
-    if (scrollPosition < 100) $('#divStack').css({'display': 'none'});
+    if (scrollPosition == 0) $('#divStack').css({'display': 'none'});
     else {
       $('body').css({'overflow-y': 'hidden'});
-      $('#overlay, #bgTop, #bgBot').css({'position': 'fixed', 'top': '-100%'}).animate({top: '0px'}, textDelay);
+      if (scrollPosition >= 1000) {
+        $('#overlay, #bgTop, #bgBot').css({'position': 'fixed', 'top': '-100%'}).animate({top: '0px'}, textDelay);
+      }
+      else if (scrollPosition < 1000) {
+        $('#overlay, #bgTop, #bgBot').animate({top: '0px'}, textDelay);
+      }
       setTimeout(function() {
         $('#overlay, #bgTop, #bgBot').css({'position':' absolute', 'top': ''});
         $('body').css({'overflow-y': '', 'height': '100%'});
