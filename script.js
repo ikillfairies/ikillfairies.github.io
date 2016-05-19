@@ -64,6 +64,7 @@ function navLink(page) {
     else if (scrollPosition < 1000) {
       $('html, body').animate({scrollTop: 0}, textDelay);
       setTimeout(function() { 
+        $('#divStack').css('display': 'none');
         setContent(page, true); 
         setBG(getRandomBG(page));
       }, textDelay);
