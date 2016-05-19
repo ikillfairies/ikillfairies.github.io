@@ -1,0 +1,25 @@
+<div class="bgTransition" id="bgTop"></div>
+<div class="bgTransition" id="bgBot"></div>
+
+<div id="overlay"></div>
+
+<div id="navBar">
+  <!-- <i id="expandNavBar" class="fa fa-angle-double-right fa" aria-hidden="true" onclick="showNavBar()"></i> -->
+  <nav>
+    <a class="navButton" id="home" onclick="navLink('home')">HOME</a>
+    <a class="navButton" id="travel" onclick="navLink('travel')">TRAVEL</a>
+    <a class="navButton" id="projects" onclick="navLink('projects')">PROJECTS</a>
+    <a class="navButton" id="contact" onclick="navLink('contact')">CONTACT</a>
+  </nav>
+</div>
+
+<div id="travelBar">
+  <p id="midwest" class="button" onclick="travelTo('midwest', false, true)">MIDWEST</p>
+  <p id="northeast" class="button" onclick="travelTo('northeast', false, true)">NORTHEAST</p>
+  <p id="mexico" class="button">MEXICO</p>
+  <p id="china" class="button">CHINA</p>
+  <p id="japan" class="button">JAPAN</p>
+  <p id="europe" class="button">EUROPE</p>
+</div>
+
+<div id="content"></div>

@@ -32,6 +32,7 @@ $(window).on('beforeunload', function() { $(window).scrollTop(0); });
 
 /* Initial load called from body of HTML */
 function initialLoad(page, pageType) {
+  $('body').load('pageBody');
   setButtonHover();                           // Set mouseover and mouseout for travel buttons
   $('#bgBot').animate({opacity: 1}, bgDelay); // Fade in the background
   if (pageType == 'normal') {
