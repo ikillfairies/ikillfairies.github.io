@@ -206,7 +206,7 @@ function setNavBar(page) {
 /* Sets an active button and resets the others */
 function setTravelBar(page) {
   var $travelBar = $('#travelBar');
-  if (currentPage == 'travel' || pageType == 'travel') 
+  if (currentPage == 'travel' || pageType == 'travel') {
     $travelBar.css({'display': 'block'}).animate({opacity: 1}, textDelay);
   }     
   else {
