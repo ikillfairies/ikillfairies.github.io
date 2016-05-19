@@ -60,7 +60,6 @@ function navLink(page) {
     setTimeout(function() { $('body').css({'overflow-y': '', 'height': '100%'}); }, textDelay);
     if (scrollPosition >= 1000) {
       $('#overlay, .bgTransition').css({'position': 'fixed', 'top': '-100%'}).animate({top: '0px'}, textDelay);
-      setContent(page, true);            // Fade out content + load new
     }
     else if (scrollPosition < 1000) {
       $('html, body').animate({scrollTop: 0}, textDelay);
@@ -71,9 +70,10 @@ function navLink(page) {
       $('body').css({'overflow-y': '', 'height': '100%'});
     }, bgDelay); 
   }
-  setBG(getRandomBG(page)); // Get random BG and set it
-  toggleTravelBar(page);    // Set travelBar visibility depending on page being loaded
-  $('.navButton').unbind(); // Disable hover effects for navBar during page transition
+  else setContent(page, true); // Fade out content + load new
+  setBG(getRandomBG(page));    // Get random BG and set it
+  toggleTravelBar(page);       // Set travelBar visibility depending on page being loaded
+  $('.navButton').unbind();    // Disable hover effects for navBar during page transition
   if (page != $('.navButton.active').prop('id')) {                                // No animate if already active
     $('.navButton.active').stop().animate({color: '#CFD8DC'}, bgDelay);           // Fade out current active link
     $('#' + page).css({'color': '#DFCDAC'}).animate({color: '#FFB74D'}, bgDelay); // Fade in new active link
