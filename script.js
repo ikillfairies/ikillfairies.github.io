@@ -48,7 +48,7 @@ function initialLoad(page, pageType) {
 /* Page Transition Links -------------------------------------------------------------------------------------------- */
 /* ------------------------------------------------------------------------------------------------------------------ */
 
-/* Called by navBar navButtons to transition to a normal page */
+/* Called by navBar navButtons to transition to a normal page */  
 function navLink(page) {
   if (locked) return;                    // If locked, no navBar transition is allowed
   locked = true;                         // If not locked, lock
@@ -73,13 +73,13 @@ function navLink(page) {
     setTimeout(function() {
       $('#overlay, .bgTransition').css({'position':' absolute', 'top': ''});
       $('body').css({'overflow-y': '', 'height': '100%'});
+      setTravelBar();              // No parameters means all buttons are reset unless pageType == travel
     }, bgDelay); 
   }
   else {
     setContent(page, true);
     setBG(getRandomBG(page));
   }
-  setTravelBar();              // No parameters means all buttons are reset unless pageType == travel
   pageType = 'normal';
   toggleTravelBar(page);       // Set travelBar visibility depending on page being loaded
   $('.navButton').unbind();    // Disable hover effects for navBar during page transition
