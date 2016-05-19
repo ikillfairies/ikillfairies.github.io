@@ -80,6 +80,7 @@ function navLink(page) {
     setContent(page, true);
     setBG(getRandomBG(page));
   }
+  pageType = 'normal';
   toggleTravelBar(page);       // Set travelBar visibility depending on page being loaded
   $('.navButton').unbind();    // Disable hover effects for navBar during page transition
   if (page != $('.navButton.active').prop('id')) {                                // No animate if already active
