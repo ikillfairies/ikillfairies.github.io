@@ -54,26 +54,24 @@ function navLink(page) {
   locked = true;      // If not locked, lock
   currentPage = page;                    // Update global page variable to whatever the new page is
   if (pageType == 'travel') {
-
     $('.button.active').stop().animate({ // Fade out the active button
       color: '#CFD8DC', backgroundColor: 'rgba(80, 85, 90, 0.2)'}, textDelay).removeClass('active');
     setButtonHover();                    // Re-enable hover effects for travel buttons
     setTimeout(function() { $('body').css({'overflow-y': '', 'height': '100%'}); }, textDelay);
     if (scrollPosition >= 1000) {
       $('#overlay, .bgTransition').css({'position': 'fixed', 'top': '-100%'}).animate({top: '0px'}, textDelay);
+      setContent(page, true);            // Fade out content + load new
     }
     else if (scrollPosition < 1000) {
       $('html, body').animate({scrollTop: 0}, textDelay);
+      setTimeout(function() { setContent(page, true); }, textDelay);
     }
     setTimeout(function() {
       $('#overlay, .bgTransition').css({'position':' absolute', 'top': ''});
       $('body').css({'overflow-y': '', 'height': '100%'});
     }, bgDelay); 
-
   }
-
   setBG(getRandomBG(page)); // Get random BG and set it
-  setContent(page, true);   // Fade out content + load new
   toggleTravelBar(page);    // Set travelBar visibility depending on page being loaded
   $('.navButton').unbind(); // Disable hover effects for navBar during page transition
   if (page != $('.navButton.active').prop('id')) {                                // No animate if already active
