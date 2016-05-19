@@ -81,7 +81,7 @@ body {
 /* Navigation bar and buttons on top -------------------------------------------------------------------------------- */
 /* ------------------------------------------------------------------------------------------------------------------ */
 #navBar {
-  background-color: rgba(20, 20, 20, 0.6);
+  background-color: rgba(35, 35, 35, 0.85);
   position: fixed;
   display: table;
   text-align: center;
@@ -97,8 +97,8 @@ body {
   text-decoration: none;
   cursor: pointer;
 }
-@media all and (min-width: 0px)   { .navButton{padding-left: 10px;  padding-right: 10px;  }}
-@media all and (min-width: 525px) { .navButton{padding-left: 20px; padding-right: 20px;   }}
+@media all and (min-width: 0px)   { .navButton{padding-left: 10px; padding-right: 10px; }}
+@media all and (min-width: 525px) { .navButton{padding-left: 20px; padding-right: 20px; }}
 
 .navButton.active {
   color: #FFB74D; 
