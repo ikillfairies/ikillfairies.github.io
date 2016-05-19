@@ -68,7 +68,8 @@ function navLink(page) {
         $('#overlay, #bgTop, #bgBot').css({'position': 'fixed', 'top': '-100%'}).animate({top: '0px'}, textDelay);
       }
       else if (scrollPosition < 1000) {
-        $('#overlay, #bgTop, #bgBot').animate({top: '0px'}, textDelay);
+        var topString = '-' + String(scrollPosition / 10) + '%';
+        $('#overlay, #bgTop, #bgBot').css({'position': 'fixed', 'top': topString}).animate({top: '0px'}, textDelay);
       }
       setTimeout(function() {
         $('#overlay, #bgTop, #bgBot').css({'position':' absolute', 'top': ''});
