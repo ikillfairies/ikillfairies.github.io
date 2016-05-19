@@ -63,8 +63,7 @@ function navLink(page) {
       $('#overlay, #bgTop, #bgBot').css({'position': 'fixed', 'top': '-100%'}).animate({top: '0px'}, textDelay);
     }
     else if (scrollPosition < 1000) {
-      var topString = '-' + String(scrollPosition / 10) + '%';
-      $('#overlay, #bgTop, #bgBot').css({'position': 'fixed', 'top': topString}).animate({top: '0px'}, textDelay);
+      $('html, body').animate({scrollTop: 0}, textDelay);
     }
     setTimeout(function() {
       $('#overlay, #bgTop, #bgBot').css({'position':' absolute', 'top': ''});
@@ -72,6 +71,7 @@ function navLink(page) {
     }, bgDelay); 
 
   }
+  else 
   setBG(getRandomBG(page)); // Get random BG and set it
   setContent(page, true);   // Fade out content + load new
   toggleTravelBar(page);    // Set travelBar visibility depending on page being loaded
