@@ -56,7 +56,6 @@ function navLink(page) {
   if (pageType == 'travel') {
     $('.button.active').stop().animate({ // Fade out the active button
       color: '#CFD8DC', backgroundColor: 'rgba(80, 85, 90, 0.2)'}, textDelay).removeClass('active');
-    setTravelBar();                      // Re-enable hover effects for travel buttons
     setTimeout(function() { $('body').css({'overflow-y': '', 'height': '100%'}); }, textDelay);
     if (scrollPosition >= 1000) {
       $('#overlay, .bgTransition').css({'position': 'fixed', 'top': '-100%'}).animate({top: '0px'}, textDelay);
@@ -80,6 +79,7 @@ function navLink(page) {
     setContent(page, true);
     setBG(getRandomBG(page));
   }
+  setTravelBar();              // No parameters means all buttons are reset unless pageType == travel
   pageType = 'normal';
   toggleTravelBar(page);       // Set travelBar visibility depending on page being loaded
   $('.navButton').unbind();    // Disable hover effects for navBar during page transition
