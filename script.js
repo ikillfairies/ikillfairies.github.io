@@ -181,11 +181,9 @@ function setContent(page, switchPage) {
 /* Set content on a travel page during transition */
 function setTravelContent(page, switchPage) {
   setContent(page, switchPage);    // Load the HTML with ajax
-  setTimeout(function() {
+  setTimeout(function() { 
     numDivs = $('.bg').length - 1; // Get # of bgDivs to set body height
     $('body').height(String((scrollMultiplier * numDivs + 1) * 100 - 1) + 'vh');
-  }, textDelay);
-  setTimeout(function() { 
     $('#divStack').css({'display': 'block'}); 
     var $bg1 = $('#bg1');
     $bg1.css({'opacity': '0'});
