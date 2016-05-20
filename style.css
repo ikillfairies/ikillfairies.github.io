@@ -93,7 +93,7 @@ body {
 .navButton {
   display: inline-block; 
   padding: 10px;
-  font-size: 20px;
+  font-size: 21px;
   text-decoration: none;
   cursor: pointer;
 }
@@ -165,8 +165,8 @@ h2 {
   -ms-user-select: text;
   user-select: text;
 }
-@media all and (min-width: 0px)   { h2{ width: 95%;   font-size: 4vw;  }}
-@media all and (min-width: 800px) { h2{ width: 760px; font-size: 35px; }}
+@media all and (min-width: 0px)   { h2{ width: 95%;   font-size: 3.75vw;  }}
+@media all and (min-width: 800px) { h2{ width: 760px; font-size: 30px;    }}
 
 h4 {
   margin-left: auto;
@@ -190,7 +190,7 @@ h4 {
   position: fixed;
   display: table;
   bottom: 0px;
-  height: 60px;
+  height: 50px;
   width: 100%;
   z-index: 1;
   display: none;
