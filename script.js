@@ -297,7 +297,7 @@ function setText() {
     return $('#textBar, #triangleUp').hide();
   }
   else if (scrollPosition >= windowHeight && $('#triangleUp').css('display') == 'none') {
-    $('#textBar').show();
+    $('#textBar, #triangleUp').show();
     $('#triangleUp').animate({'border-bottom-width': '25px'}, textDelay);
   }
   var textIndex = Math.floor((scrollPosition / (windowHeight * scrollMultiplier) - 0.3));
