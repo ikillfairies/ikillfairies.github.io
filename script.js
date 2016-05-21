@@ -11,8 +11,6 @@ var pageType;               // Current page type. Either 'travel' or 'normal'
 
 /* Fix the shitty scroll jumping issue on IE and Edge (kinda) */
 $(document).ready(function() {
-  $('#textBar, #triangleUp, h2').mouseover(function() { $(this).stop().animate({color: '#DFCDAC'}, 150); });
-  $('#textBar, #triangleUp, h2').mouseout(function() { $(this).stop().animate({color: '#CFD8DC'}, 300); });
   if(navigator.userAgent.match(/Trident\/7\./) || navigator.userAgent.match(/Edge\/13\./)) {
     $('body').on("mousewheel", function () { // Note this doesn't fix touchpad scroll for IE Edge but screw Edge users
       event.preventDefault(); 
@@ -190,6 +188,8 @@ function setTravelContent(page, switchPage) {
     var $bg1 = $('#bg1');
     $bg1.css({'opacity': '0'});
     $bg1.css('background', 'url(./' + page + '/bg1.jpg) no-repeat center center').css('background-size', 'cover');
+    $('#textBar, #triangleUp, h2').mouseover(function() { $(this).stop().animate({color: '#FFB74D'}, 150); });
+    $('#textBar, #triangleUp, h2').mouseout(function() { $(this).stop().animate({color: '#CFD8DC'}, 300); });
   }, bgDelay);
 }
 
