@@ -201,6 +201,6 @@ h4 {
   bottom: 45px;
   border-left: 30px solid transparent;
   border-right: 30px solid transparent;
-  border-bottom: 25px solid rgba(35, 35, 35, 0.85);
+  border-bottom: 0px solid rgba(35, 35, 35, 0.85);
   display: none;
 }

@@ -293,12 +293,13 @@ function setVariables() {
 }
 
 function setText() {
-  if (scrollPosition < windowHeight) {
-    return $('#textBar, #triangleUp').hide();
+  if (scrollPosition < windowHeight && $('#textBar').css('display') == 'none') {
+    $('#textBar, #triangleUp').hide();
+    $('#triangleUp').css({'border-bototm-width': '0px'});
   }
-  else if (scrollPosition >= windowHeight && $('#triangleUp').css('display') == 'none') {
+  else if (scrollPosition >= windowHeight && $('#textBar').css('display') == 'none') {
     $('#textBar, #triangleUp').show();
-    $('#triangleUp').animate({'border-bottom-width': '25px'}, textDelay);
+    $('#triangleUp').animate({'border-bottom-width': '25px'}, 100);
   }
   var textIndex = Math.floor((scrollPosition / (windowHeight * scrollMultiplier) - 0.3));
   $('#imageTitle').load(currentPage + '/text' + String(textIndex));
