@@ -11,14 +11,14 @@ var pageType;               // Current page type. Either 'travel' or 'normal'
 
 /* Fix the shitty scroll jumping issue on IE and Edge (kinda) */
 $(document).ready(function() {
+  $('#textBar, #triangleUp').mouseover(function() { $('h2').stop().animate({color: '#DFCDAC'}, 150); });
+  $('#textBar, #triangleUp').mouseout(function() { $('h2').stop().animate({color: '#CFD8DC'}, 300); });
   if(navigator.userAgent.match(/Trident\/7\./) || navigator.userAgent.match(/Edge\/13\./)) {
     $('body').on("mousewheel", function () { // Note this doesn't fix touchpad scroll for IE Edge but screw Edge users
       event.preventDefault(); 
       window.scrollTo(0, window.pageYOffset - event.wheelDelta);
     });
   }
-  $('#textBar, #triangleUp').mouseover(function() { $('h2').stop().animate({color: '#DFCDAC'}, 150); });
-  $('#textBar, #triangleUp').mouseout(function() { $('h2').stop().animate({color: '#CFD8DC'}, 300); });
 });
 
 /* On popstate (back and forward buttons) call an instant page switch */
