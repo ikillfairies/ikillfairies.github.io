@@ -197,10 +197,10 @@ h4 {
 
 #triangleUp {
   position: fixed;
-  left: calc(50% - 30px);
+  left: calc(50% - 24px);
   bottom: 45px;
-  border-left: 30px solid transparent;
-  border-right: 30px solid transparent;
+  border-left: 24px solid transparent;
+  border-right: 24px solid transparent;
   border-bottom: 0px solid rgba(35, 35, 35, 0.85);
   display: none;
 }

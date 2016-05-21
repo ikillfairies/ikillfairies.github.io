@@ -303,7 +303,7 @@ function setText() {
   }
   else if (scrollPosition >= windowHeight && $('#textBar').css('display') == 'none') {
     $('#textBar, #triangleUp').show();
-    $('#triangleUp').stop().delay(2000).animate({'border-bottom-width': '25px'}, 200);
+    $('#triangleUp').stop().animate({'border-bottom-width': '20px'}, 200);
     var textIndex = Math.floor((scrollPosition / (windowHeight * scrollMultiplier) - 0.3));
     $('#imageTitle').load(currentPage + '/text' + String(textIndex));
   }
