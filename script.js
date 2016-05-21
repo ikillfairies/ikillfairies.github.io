@@ -144,8 +144,8 @@ function fastTravelTo(page) {
     $('#bg1').css({'opacity': '0'});
     $('#bg1').css('background', 'url(./' + page + '/bg1.jpg) no-repeat center center').css('background-size', 'cover');
     $('#divStack').css({'display': 'block'});
-    $('#textBar, #triangleUp, h2').mouseover(function() { $(this).stop().animate({color: '#FFB74D'}, 150); });
-    $('#textBar, #triangleUp, h2').mouseout(function() { $(this).stop().animate({color: '#CFD8DC'}, 300); });
+    $('#textBar, #triangleUp, h2').mouseover(function() { $('h2').stop().animate({color: '#FFB74D'}, 150); });
+    $('#textBar, #triangleUp, h2').mouseout(function() { $('h2').stop().animate({color: '#CFD8DC'}, 300); });
   }, textDelay);
 }
 
@@ -190,8 +190,8 @@ function setTravelContent(page, switchPage) {
     var $bg1 = $('#bg1');
     $bg1.css({'opacity': '0'});
     $bg1.css('background', 'url(./' + page + '/bg1.jpg) no-repeat center center').css('background-size', 'cover');
-    $('#textBar, #triangleUp, h2').mouseover(function() { $(this).stop().animate({color: '#FFB74D'}, 150); });
-    $('#textBar, #triangleUp, h2').mouseout(function() { $(this).stop().animate({color: '#CFD8DC'}, 300); });
+    $('#textBar, #triangleUp, h2').mouseover(function() { $('h2').stop().animate({color: '#FFB74D'}, 150); });
+    $('#textBar, #triangleUp, h2').mouseout(function() { $('h2').stop().animate({color: '#CFD8DC'}, 300); });
   }, bgDelay);
 }
 
