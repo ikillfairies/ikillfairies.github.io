@@ -98,7 +98,7 @@ body {
   cursor: pointer;
 }
 @media all and (min-width: 0px)   { .navButton{padding-left: 10px; padding-right: 10px; }}
-@media all and (min-width: 525px) { .navButton{padding-left: 20px; padding-right: 20px; }}
+@media all and (min-width: 550px) { .navButton{padding-left: 25px; padding-right: 25px; }}
 
 .navButton.active {
   color: #FFB74D; 
