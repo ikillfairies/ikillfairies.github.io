@@ -293,8 +293,8 @@ function setVariables() {
 }
 
 function setText() {
-  if (scrollPosition < windowHeight) return $('#textBar').hide();
-  else if (scrollPosition >= windowHeight) $('#textBar').show();
+  if (scrollPosition < windowHeight) return $('#textBar, #triangleUp').hide();
+  else if (scrollPosition >= windowHeight) $('#textBar, #triangleUp').show();
   var textIndex = Math.floor((scrollPosition / (windowHeight * scrollMultiplier) - 0.3));
   $('#imageTitle').load(currentPage + '/text' + String(textIndex));
 }
