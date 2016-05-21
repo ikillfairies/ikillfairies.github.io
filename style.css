@@ -156,8 +156,7 @@ h2 {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 3px;
   font-weight: 300;
   -moz-user-select: text;
   -khtml-user-select: text;
@@ -186,12 +185,21 @@ h4 {
 }
 
 #textBar {
-  background-color: rgba(50, 50, 50, 0.8);
+  background-color: rgba(35, 35, 35, 0.85);
   position: fixed;
   display: table;
   bottom: 0px;
-  height: 50px;
+  height: 45px;
   width: 100%;
   z-index: 1;
   display: none;
+}
+
+#triangleUp {
+  position: fixed;
+  left: calc(50% - 20px);
+  bottom: 45px;
+  border-left: calc(20px) solid transparent;
+  border-right: calc(20px) solid transparent;
+  border-bottom: calc(30px) solid #FFB74D;
 }
