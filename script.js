@@ -293,7 +293,7 @@ function setVariables() {
 }
 
 function setText() {
-  if (scrollPosition < windowHeight && $('#textBar').css('display') == 'none') {
+  if (scrollPosition < windowHeight && $('#textBar').css('display') == 'block') {
     $('#textBar, #triangleUp').hide();
     $('#triangleUp').css({'border-bototm-width': '0px'});
   }
