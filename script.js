@@ -11,8 +11,8 @@ var pageType;               // Current page type. Either 'travel' or 'normal'
 
 /* Fix the shitty scroll jumping issue on IE and Edge (kinda) */
 $(document).ready(function() {
-  $('#textBar, #triangleUp').mouseover(function() { $('h2').stop().animate({color: '#DFCDAC'}, 150); });
-  $('#textBar, #triangleUp').mouseout(function() { $('h2').stop().animate({color: '#CFD8DC'}, 300); });
+  $('#textBar, #triangleUp, h2').mouseover(function() { $(this).stop().animate({color: '#DFCDAC'}, 150); });
+  $('#textBar, #triangleUp, h2').mouseout(function() { $(this).stop().animate({color: '#CFD8DC'}, 300); });
   if(navigator.userAgent.match(/Trident\/7\./) || navigator.userAgent.match(/Edge\/13\./)) {
     $('body').on("mousewheel", function () { // Note this doesn't fix touchpad scroll for IE Edge but screw Edge users
       event.preventDefault(); 
@@ -302,7 +302,7 @@ function setText() {
   else if (scrollPosition >= windowHeight && $('#textBar').css('display') == 'none') {
     $('#textBar, #triangleUp').show();
     $('#triangleUp').animate({'border-bottom-width': '25px'}, 200);
+    var textIndex = Math.floor((scrollPosition / (windowHeight * scrollMultiplier) - 0.3));
+    $('#imageTitle').load(currentPage + '/text' + String(textIndex));
   }
-  var textIndex = Math.floor((scrollPosition / (windowHeight * scrollMultiplier) - 0.3));
-  $('#imageTitle').load(currentPage + '/text' + String(textIndex));
 }
