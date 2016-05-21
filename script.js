@@ -293,8 +293,13 @@ function setVariables() {
 }
 
 function setText() {
-  if (scrollPosition < windowHeight) return $('#textBar, #triangleUp').hide();
-  else if (scrollPosition >= windowHeight) $('#textBar, #triangleUp').show();
+  if (scrollPosition < windowHeight) {
+    return $('#textBar, #triangleUp').hide();
+  }
+  else if (scrollPosition >= windowHeight && $('#triangleUp').css('display') == 'none') {
+    $('#textBar').show();
+    $('#triangleUp').animate({'border-bottom-width': '25px'}, textDelay);
+  }
   var textIndex = Math.floor((scrollPosition / (windowHeight * scrollMultiplier) - 0.3));
   $('#imageTitle').load(currentPage + '/text' + String(textIndex));
 }
