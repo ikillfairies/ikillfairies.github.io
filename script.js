@@ -17,6 +17,8 @@ $(document).ready(function() {
       window.scrollTo(0, window.pageYOffset - event.wheelDelta);
     });
   }
+  $('#textBar, #triangleUp').mouseover(function() { $('h2').stop().animate({color: '#DFCDAC'}, 150); });
+  $('#textBar, #triangleUp').mouseout(function() { $('h2').stop().animate({color: '#CFD8DC'}, 300); });
 });
 
 /* On popstate (back and forward buttons) call an instant page switch */
