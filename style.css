@@ -195,22 +195,9 @@ h4 {
   display: none;
 }
 
-#triangleExpandOuter {
+#triangleExpand {
   position: fixed;
   right: 20px;
   top: calc(50% - 22px);
-  border-top: 15px solid transparent;
-  border-bottom: 15px solid transparent;
-  border-right: 20px solid #F5F5F5;
-  display: none;
-}
-
-#triangleExpandInner {
-  position: fixed;
-  right: 21px;
-  top: calc(50% - 21px);
-  border-top: 14px solid transparent;
-  border-bottom: 14px solid transparent;
-  border-right: 18px solid #424242;
   display: none;
 }

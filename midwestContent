@@ -14,8 +14,7 @@
   <div class="bg" id="bg11"></div>
   <div class="bg" id="bg12"></div>
 </div>
-<div id="triangleExpandOuter"></div>
-<div id="triangleExpandInner"></div>
+<i id="expandTextBar" class="fa fa-chevron-circle-left" aria-hidden="true"></i>
 <div id="textBar">
   <h2 id="imageTitle"></h2>
 </div>
