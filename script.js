@@ -144,8 +144,7 @@ function fastTravelTo(page) {
     $('#bg1').css({'opacity': '0'});
     $('#bg1').css('background', 'url(./' + page + '/bg1.jpg) no-repeat center center').css('background-size', 'cover');
     $('#divStack').css({'display': 'block'});
-    $('#textBar, #triangleUp, h2').mouseover(function() { $('h2').stop().animate({color: '#FFCC80'}, 150); });
-    $('#textBar, #triangleUp, h2').mouseout(function() { $('h2').stop().animate({color: '#CFD8DC'}, 300); });
+
   }, textDelay);
 }
 
@@ -190,8 +189,7 @@ function setTravelContent(page, switchPage) {
     var $bg1 = $('#bg1');
     $bg1.css({'opacity': '0'});
     $bg1.css('background', 'url(./' + page + '/bg1.jpg) no-repeat center center').css('background-size', 'cover');
-    $('#textBar, #triangleUp, h2').mouseover(function() { $('h2').stop().animate({color: '#FFCC80'}, 150); });
-    $('#textBar, #triangleUp, h2').mouseout(function() { $('h2').stop().animate({color: '#CFD8DC'}, 300); });
+
   }, bgDelay);
 }
 
@@ -298,8 +296,7 @@ function setVariables() {
 
 function setText() {
   if (scrollPosition < windowHeight && $('#textBar').css('display') == 'block') {
-    $('#textBar, #triangleUp').hide();
-    $('#triangleUp').css({'border-bottom-width': '0px'});
+
   }
   else if (scrollPosition >= windowHeight && $('#textBar').css('display') == 'none') {
     $('#textBar, #triangleUp').show();
