@@ -195,7 +195,15 @@ h4 {
   display: none;
 }
 
-#expandTextBar {
+#expandTextBarInner {
+  position: fixed;
+  right: 20px;
+  top: calc(50% - 22px);
+  font-size: 30px;
+  display: none;
+}
+
+#expandTextBarOuter {
   position: fixed;
   right: 20px;
   top: calc(50% - 22px);
