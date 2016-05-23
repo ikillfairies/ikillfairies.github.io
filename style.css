@@ -196,19 +196,24 @@ h4 {
 }
 
 #expandTextBarInner {
+  color: #212121;
   position: fixed;
-  right: 20px;
-  top: calc(50% - 22px);
-  font-size: 30px;
+  right: 27px;
+  top: calc(50% - 14px);
+  font-size: 29px;
   display: block;
+  opacity: 0.8;
+  z-index: 1;
 }
 
 #expandTextBarOuter {
+  background-color: #EEEEEE;
   position: fixed;
-  right: 20px;
-  top: calc(50% - 22px);
+  right: 15px;
+  top: calc(50% - 20px);
   border-radius: 50%;
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
+  opacity: 0.8;
   display: block;
 }
