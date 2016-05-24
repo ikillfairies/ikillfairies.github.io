@@ -24,7 +24,7 @@ $(window).bind('popstate', function() {                     // Executed on brows
   var page = location.pathname.split('/')[1].split('.')[0]; // Some string manipulation crap to get new page name
   if (page == '' || page == 'index') fastNavLink('home');
   else if (page == 'midwest') fastTravelTo(page);
-  else fastNavLink(page, true);
+  else fastNavLink(page);
 });
 
 /* If a user refresh, force them to top of page (unfortunately also called when leaving the page) */
@@ -36,7 +36,7 @@ function initialLoad(page, pageType) {
   $('#bgBot').animate({opacity: 1}, bgDelay); // Fade in the background
   if (pageType == 'normal') {
     setNavBar(page);
-    navLink(page, false);                            // The part where you actually load the page lol
+    navLink(page);                            // The part where you actually load the page lol
   }
   else if (pageType == 'travel') {
     setNavBar('travel');
@@ -49,7 +49,7 @@ function initialLoad(page, pageType) {
 /* ------------------------------------------------------------------------------------------------------------------ */
 
 /* Called by navBar navButtons to transition to a normal page */  
-function navLink(page, switchPage) {
+function navLink(page) {
   if (locked) return;                    // If locked, no navBar transition is allowed
   locked = true;                         // If not locked, lock
   currentPage = page;                    // Update global page variable to whatever the new page is
@@ -88,7 +88,7 @@ function navLink(page, switchPage) {
     $('#' + page).css({'color': '#DFCDAC'}).animate({color: '#FFB74D'}, bgDelay); // Fade in new active link
   }
   setTimeout(function() { setNavBar(page); }, bgDelay);                           // Re-enable hover effects for navBar
-  if (page == 'home' && switchPage != false) window.history.pushState({urlPath: '/index.html'}, '', '/index.html'); // Index shit
+  if (page == 'home') window.history.pushState({urlPath: '/index.html'}, '', '/index.html'); // Index shit
   else window.history.pushState({urlPath: '/' + page}, '', '/' + page + '.html');            // Other pages
   setTimeout(function() { locked = false; }, bgDelay); // Release lock after page transition
 }
