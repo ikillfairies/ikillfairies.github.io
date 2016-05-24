@@ -209,7 +209,7 @@ h4 {
 #expandTextBarOuter {
   background-color: #CFD8DC;
   position: fixed;
-  right: 15px;
+  left: 15px;
   top: calc(50% - 20px);
   border-radius: 50%;
   height: 40px;
