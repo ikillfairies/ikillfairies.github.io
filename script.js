@@ -303,6 +303,6 @@ function setText() {
   else if (scrollPosition >= windowHeight) {
     $('#textBar').show();
     var textIndex = Math.floor((scrollPosition / (windowHeight * scrollMultiplier) - 0.3));
-    $('#imageTitle').load(currentPage + '/text' + String(textIndex));
+    $('#textBar').load(currentPage + '/text' + String(textIndex));
   }
 }

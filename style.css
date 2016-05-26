@@ -154,19 +154,29 @@ h1 {
 @media all and (min-width: 800px) { h1{ width: 760px; font-size: 100px; }}
 
 h2 {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 3px;
-  font-weight: 300;
+  text-align: right;
+  margin-top: 7px;
+  margin-bottom: -12px;
+  font-weight: 100;
   -moz-user-select: text;
   -khtml-user-select: text;
   -webkit-user-select: text;
   -ms-user-select: text;
   user-select: text;
 }
-@media all and (min-width: 0px)   { h2{ width: 95%;   font-size: 3.75vw;  }}
-@media all and (min-width: 800px) { h2{ width: 760px; font-size: 30px;    }}
+@media all and (min-width: 0px)   { h2{ width: 200%;  font-size: 20px; }}
+@media all and (min-width: 800px) { h2{ width: 250px; font-size: 25px; }}
+
+h3 {
+  text-align: right;
+  margin-bottom: -9px;
+  font-weight: 100;
+  -moz-user-select: text;
+  -khtml-user-select: text;
+  -webkit-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
 
 h4 {
   margin-left: auto;
@@ -174,7 +184,7 @@ h4 {
   margin-bottom: 5vh;
   line-height: 1.5;
   text-align: justify;
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 300;
   opacity: 1;
 }
@@ -185,12 +195,21 @@ h4 {
   text-align: center;
 }
 
+.location {
+  font-size: 16px;
+}
+
+.date {
+  font-size: 14px;
+  font-style: italic;
+}
+
 #textBar {
   background-color: rgba(35, 35, 35, 0.85);
   position: fixed;
   display: table;
   bottom: 0px;
-  height: 45px;
+  height: 90px;
   width: 100%;
   z-index: 1;
   display: none;
