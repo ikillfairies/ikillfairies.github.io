@@ -296,11 +296,10 @@ function setVariables() {
 
 function setText() {
   if (scrollPosition < windowHeight && $('#textBar').css('display') == 'block') {
-
+    $('#textBar').hide();
   }
   else if (scrollPosition >= windowHeight && $('#textBar').css('display') == 'none') {
-    $('#textBar, #triangleUp').show();
-    $('#triangleUp').stop().animate({'border-bottom-width': '20px'}, 200);
+    $('#textBar').show();
     var textIndex = Math.floor((scrollPosition / (windowHeight * scrollMultiplier) - 0.3));
     $('#imageTitle').load(currentPage + '/text' + String(textIndex));
   }
