@@ -154,6 +154,7 @@ h1 {
 @media all and (min-width: 800px) { h1{ width: 760px; font-size: 100px; }}
 
 h2 {
+  width: 250px;
   text-align: right;
   margin-top: 7px;
   margin-bottom: -12px;
@@ -164,10 +165,11 @@ h2 {
   -ms-user-select: text;
   user-select: text;
 }
-@media all and (min-width: 0px)   { h2{ width: 200%;  font-size: 20px; }}
-@media all and (min-width: 800px) { h2{ width: 250px; font-size: 25px; }}
+@media all and (min-width: 0px)   { h2{ font-size: 20px; }}
+@media all and (min-width: 800px) { h2{ font-size: 25px; }}
 
 h3 {
+  width: 250px;
   text-align: right;
   margin-bottom: -9px;
   font-weight: 100;
