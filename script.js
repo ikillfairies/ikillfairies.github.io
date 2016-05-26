@@ -212,7 +212,7 @@ function toggleTravelBar() {
 /* Sets an active navButton and resets the others */
 function setNavBar(page) {
   $('.navButton').mouseover(function() { 
-    $(this).stop().animate({color: '#FFCC80'}, 150); });
+    $(this).stop().animate({color: '#DFCDAC'}, 150); });
   $('.navButton').mouseout(function() { 
     $(this).stop().animate({color: '#CFD8DC'}, 300); });
   $('.navButton.active').css({'color': '#CFD8DC'}).removeClass('active');
