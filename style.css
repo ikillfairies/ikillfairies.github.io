@@ -159,6 +159,7 @@ h2 {
   margin-bottom: -15px;
   font-size: 25px;
   font-weight: 100;
+  color: #FFB74D;
   -moz-user-select: text;
   -khtml-user-select: text;
   -webkit-user-select: text;
@@ -172,7 +173,6 @@ h3 {
   text-align: right;
   margin-bottom: -10px;
   font-weight: 100;
-  color: #FFCC80;
   -moz-user-select: text;
   -khtml-user-select: text;
   -webkit-user-select: text;
