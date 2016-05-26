@@ -166,8 +166,6 @@ h2 {
   -ms-user-select: text;
   user-select: text;
 }
-@media all and (min-width: 0px)   { h2{ width: 200px; }}
-@media all and (min-width: 800px) { h2{ width: 250px; }}
 
 h3 {
   text-align: right;
@@ -178,16 +176,6 @@ h3 {
   -webkit-user-select: text;
   -ms-user-select: text;
   user-select: text;
-}
-@media all and (min-width: 0px)   { h3{ width: 200px; }}
-@media all and (min-width: 800px) { h3{ width: 250px; }}
-.location {
-  font-size: 17px;
-}
-.date {
-  font-size: 15px;
-  font-style: italic;
-  color: #B0BEC5;
 }
 
 h4 {
@@ -207,6 +195,9 @@ h4 {
   text-align: center;
 }
 
+.textBarLeft {
+  width: 350px;
+}
 
 #textBar {
   background-color: rgba(35, 35, 35, 0.85);
@@ -219,25 +210,11 @@ h4 {
   display: none;
 }
 
-#expandTextBarInner {
-  color: #212121;
-  position: fixed;
-  right: 28px;
-  top: calc(50% - 14px);
-  font-size: 29px;
-  display: none;
-  opacity: 0.8;
-  z-index: 1;
+#location {
+  font-size: 17px;
 }
-
-#expandTextBarOuter {
-  background-color: #CFD8DC;
-  position: fixed;
-  left: 15px;
-  top: calc(50% - 20px);
-  border-radius: 50%;
-  height: 40px;
-  width: 40px;
-  opacity: 0.8;
-  display: none;
+#date {
+  font-size: 15px;
+  font-style: italic;
+  color: #B0BEC5;
 }
