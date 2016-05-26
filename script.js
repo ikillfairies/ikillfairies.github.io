@@ -212,9 +212,9 @@ function toggleTravelBar() {
 /* Sets an active navButton and resets the others */
 function setNavBar(page) {
   $('.navButton').mouseover(function() { 
-    $(this).stop().animate({color: '#DFCDAC', backgroundColor: 'rgba(255, 255, 255, 0.05)'}, 150); });
+    $(this).stop().animate({color: '#DFCDAC'}, 150); });
   $('.navButton').mouseout(function() { 
-    $(this).stop().animate({color: '#CFD8DC', backgroundColor: ''}, 300); });
+    $(this).stop().animate({color: '#CFD8DC'}, 300); });
   $('.navButton.active').css({'color': '#CFD8DC'}).removeClass('active');
   $('#' + page).addClass('active').unbind().css({'color': '#FFB74D'});
   $('.navButton:not(.active)').css({'color': '#CFD8DC', 'cursor': 'pointer'});
