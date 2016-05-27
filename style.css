@@ -155,7 +155,7 @@ h1 {
 
 h2 {
   text-align: right;
-  margin-top: 7px;
+  margin-top: 6px;
   margin-bottom: -15px;
   font-size: 25px;
   font-weight: 100;
@@ -195,9 +195,8 @@ h4 {
   text-align: center;
 }
 
-.textBarLeft {
-  width: 350px;
-}
+@media all and (min-width: 0px)    { .textBarLeft{ width: 250px; }}
+@media all and (min-width: 1000px) { .textBarLeft{ width: 25%    }}
 
 #textBar {
   background-color: rgba(35, 35, 35, 0.85);
