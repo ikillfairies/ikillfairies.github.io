@@ -4,5 +4,5 @@
   <h3 id="date">June 12, 2015 on Fayette Ave</h3>
 </div>
 <div id="textBarMiddle">
-  <h3></h3>
+  <h3 id="description">Test</h3>
 </div>
