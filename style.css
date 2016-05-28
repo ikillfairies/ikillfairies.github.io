@@ -233,8 +233,8 @@ h4 {
   display: inline-block;
   text-align: left;
 }
-@media all and (min-width: 0px)    { #textBarLeft{ width: 250px; }}
-@media all and (min-width: 1000px) { #textBarLeft{ width: 25%    }}
+@media all and (min-width: 0px)    { #textBarRight{ margin-left: 650px; width: 250px; }}
+@media all and (min-width: 1000px) { #textBarRight{ margin-left: 75%;   width: 25%    }}
 
 .description {
   font-size: 17px;
@@ -242,4 +242,8 @@ h4 {
   margin-bottom: -2px;
   margin-left: 50px;
   text-align: left;
+}
+
+#expandTextBar {
+  margin-top: 13px;
 }
