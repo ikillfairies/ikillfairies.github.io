@@ -209,9 +209,9 @@ h4 {
   display: inline-block;
   text-align: left;
 }
-@media all and (min-width: 0px)    { #textBarMiddle { width: 400px; }}
-@media all and (min-width: 650px)  { #textBarMiddle { width: 65%;   }}
-@media all and (min-width: 1000px) { #textBarMiddle { width: 50%;   }}
+@media all and (min-width: 0px)    { #textBarMiddle { left: 250px; width: 400px; }}
+@media all and (min-width: 650px)  { #textBarMiddle { left: 250px; width: 65%;   }}
+@media all and (min-width: 1000px) { #textBarMiddle { left: 25%;   width: 50%;   }}
 
 #textBar {
   background-color: rgba(35, 35, 35, 0.85);
