@@ -195,8 +195,13 @@ h4 {
   text-align: center;
 }
 
-@media all and (min-width: 0px)    { .textBarLeft{ width: 250px; }}
-@media all and (min-width: 1000px) { .textBarLeft{ width: 25%    }}
+#textBarLeft {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+}
+@media all and (min-width: 0px)    { #textBarLeft{ width: 250px; }}
+@media all and (min-width: 1000px) { #textBarLeft{ width: 25%    }}
 
 .textBarMiddle {
   text-align: left;
