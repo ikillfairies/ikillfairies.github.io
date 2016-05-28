@@ -223,7 +223,7 @@ function setNavBar(page) {
 /* Sets an active button and resets the others */
 function setTravelBar(page) {
   $('.button').mouseover(function() {
-    $(this).stop().animate({color: '#DFCDAC', backgroundColor: 'rgba(40, 40, 40, 0.7)'}, 150)});
+    $(this).stop().animate({color: '#E0CDAC', backgroundColor: 'rgba(40, 40, 40, 0.7)'}, 150)});
   $('.button').mouseout(function() {
     $(this).stop().animate({color: '#CFD8DC', backgroundColor: 'rgba(80, 85, 90, 0.2)'}, 400)});
   $('.button.active').css({'color': '#CFD8DC', 'background-color': 'rgba(80, 85, 90, 0.2)'}).removeClass('active');
@@ -301,8 +301,19 @@ function setText() {
     $('#textBar').hide();
   }
   else if (scrollPosition >= windowHeight) {
+    var $expandTextBar = $('#expandTextBar');
     $('#textBar').show();
     var textIndex = Math.floor((scrollPosition / (windowHeight * scrollMultiplier) - 0.3));
     $('#textBar').load(currentPage + '/text' + String(textIndex));
+    $expandTextBar.mouseover(function() {
+      $(this).stop().animate({color: '#FFB74D', backgroundColor: 'rgba(70, 70, 70, 0.7)'}, 150)});
+    $expandTextBar.mouseout(function() {
+      $(this).stop().animate({color: '#CFD8DC', backgroundColor: 'rgba(70, 70, 70, 0)'}, 400)});
   }
+}
+
+function expandContractTextBar() {
+  var $textBar = $('#textBar');
+  if ($textBar.css('height') == 44) $textBar.animate({height: '250px'}, 150);
+  else $textBar.animate({height: '44px'}, 100);
 }
