@@ -245,5 +245,9 @@ h4 {
 }
 
 #expandTextBar {
+  font-size: 25px;
+  padding: 17px;
+  padding-top: 7px;
+  padding-bottom: 12px;
   margin-top: 13px;
 }
