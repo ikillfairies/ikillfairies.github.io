@@ -1,7 +1,7 @@
 <div id="textBarLeft">
   <h2 id="imageTitle">Lake Monona</h2>
-  <h3>Madison, WI</h3>
-  <h3 id="date">June 12, 2015 on Fayette Ave</h3>
+  <h3>Madison, WI<br>
+  June 12, 2015 on Fayette Ave</h3>
 </div>
 <div id="textBarMiddle">
   <h3 class="description">Home to mosquitos in the summer and ice fishers in the winter.</h3>
