@@ -14,6 +14,4 @@
   <div class="bg" id="bg11"></div>
   <div class="bg" id="bg12"></div>
 </div>
-<!-- <i id="expandTextBarInner" class="fa fa-chevron-left" aria-hidden="true"></i> -->
-<div id="expandTextBarOuter"></div>
 <div id="textBar"></div>
