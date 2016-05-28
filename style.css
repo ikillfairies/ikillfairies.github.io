@@ -155,9 +155,9 @@ h1 {
 
 h2 {
   text-align: right;
-  margin-top: 6px;
-  margin-bottom: -5px;
-  font-size: 25px;
+  margin-top: 7px;
+  margin-bottom: -8px;
+  font-size: 22px;
   font-weight: 100;
   color: #FFB74D;
   -moz-user-select: text;
@@ -225,7 +225,7 @@ h4 {
 
 .description {
   font-size: 17px;
-  margin-top: 13px;
+  margin-top: 11px;
   margin-bottom: -2px;
   margin-left: 50px;
   text-align: left;
