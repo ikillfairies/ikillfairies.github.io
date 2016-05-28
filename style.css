@@ -197,6 +197,7 @@ h4 {
 
 #textBarLeft {
   position: fixed;
+  height: 90px;
   bottom: 0px;
   left: 0px;
 }
