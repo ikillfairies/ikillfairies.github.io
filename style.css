@@ -207,9 +207,9 @@ h4 {
   position: fixed;
   display: inline-block;
 }
-@media all and (min-width: 0px)    { #textBarMiddle { width: 400px; }}
-@media all and (min-width: 650px)  { #textBarMiddle { width: 65%;   }}
-@media all and (min-width: 1000px) { #textBarMiddle { width: 50%;   }}
+@media all and (min-width: 0px)    { #textBarMiddle { margin-left: 250px; width: 400px; }}
+@media all and (min-width: 650px)  { #textBarMiddle { margin-left: 250px; width: 65%;   }}
+@media all and (min-width: 1000px) { #textBarMiddle { margin-left: 25%;   width: 50%;   }}
 
 #textBar {
   background-color: rgba(35, 35, 35, 0.85);
