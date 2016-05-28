@@ -197,21 +197,20 @@ h4 {
 
 #textBarLeft {
   display: inline-block;
-  position: fixed;
   height: 90px;
   bottom: 0px;
-  left: 0px;
 }
 @media all and (min-width: 0px)    { #textBarLeft{ width: 250px; }}
 @media all and (min-width: 1000px) { #textBarLeft{ width: 25%    }}
 
 #textBarMiddle {
   display: inline-block;
+  height: 90px;
   text-align: left;
 }
-@media all and (min-width: 0px)    { #textBarMiddle { left: 250px; width: 400px; }}
-@media all and (min-width: 650px)  { #textBarMiddle { left: 250px; width: 65%;   }}
-@media all and (min-width: 1000px) { #textBarMiddle { left: 25%;   width: 50%;   }}
+@media all and (min-width: 0px)    { #textBarMiddle { margin-left: 250px; width: 400px; }}
+@media all and (min-width: 650px)  { #textBarMiddle { margin-left: 250px; width: 65%;   }}
+@media all and (min-width: 1000px) { #textBarMiddle { margin-left: 25%;   width: 50%;   }}
 
 #textBar {
   background-color: rgba(35, 35, 35, 0.85);
