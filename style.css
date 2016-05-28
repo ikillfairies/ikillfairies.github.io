@@ -199,7 +199,6 @@ h4 {
 #textBarLeft {
   position: fixed;
   display: inline-block;
-  bottom: 0px;
 }
 @media all and (min-width: 0px)    { #textBarLeft{ width: 250px; }}
 @media all and (min-width: 1000px) { #textBarLeft{ width: 25%    }}
@@ -208,9 +207,9 @@ h4 {
   position: fixed;
   display: inline-block;
 }
-@media all and (min-width: 0px)    { #textBarMiddle { margin-left: 250px; width: 400px; }}
-@media all and (min-width: 650px)  { #textBarMiddle { margin-left: 250px; width: 65%;   }}
-@media all and (min-width: 1000px) { #textBarMiddle { margin-left: 25%;   width: 50%;   }}
+@media all and (min-width: 0px)    { #textBarMiddle { width: 400px; }}
+@media all and (min-width: 650px)  { #textBarMiddle { width: 65%;   }}
+@media all and (min-width: 1000px) { #textBarMiddle { width: 50%;   }}
 
 #textBar {
   background-color: rgba(35, 35, 35, 0.85);
@@ -223,14 +222,11 @@ h4 {
   display: none;
 }
 
-#date {
-  color: #B0BEC5;
-}
-
 .description {
   font-size: 17px;
-  margin-top: 15px;
+  margin-top: 13px;
+  margin-bottom: -2px;
   margin-left: 50px;
   text-align: left;
-  line-height: 1;
+  line-height: 1.4;
 }
