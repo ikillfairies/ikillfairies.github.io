@@ -161,7 +161,6 @@ h1 {
 h2 {
   text-align: left;
   margin-top: 8px;
-  margin-bottom: -8px;
   margin-left: 20px;
   font-size: 22px;
   font-weight: 100;
@@ -216,18 +215,20 @@ h4 {
 }
 
 .description {
-  font-size: 17px;
-  margin-top: 11px;
-  margin-bottom: -2px;
-  margin-left: 50px;
-  text-align: left;
+  font-size: 15px;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  margin-right: 20px;
+  margin-left: 20px;
+  text-align: justify;
 }
 
 .imageInfo {
   position: fixed;
   color: #888;
-  bottom: 0px;
-  right: 30px;
+  bottom: 9px;
+  right: 70px;
+  margin: 0px;
   text-align: right;
 }
 
@@ -241,6 +242,5 @@ h4 {
   padding-top: 8px;
   padding-bottom: 11px;
   cursor: pointer;
+  z-index: 2;
 }
-@media all and (min-width: 0px)    { #expandTextBar{ margin-left: 650px; width: 250px; }}
-@media all and (min-width: 1000px) { #expandTextBar{ margin-left: 75%;   width: 25%    }}

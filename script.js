@@ -306,14 +306,14 @@ function setText() {
     var textIndex = Math.floor((scrollPosition / (windowHeight * scrollMultiplier) - 0.3));
     $('#textBar').load(currentPage + '/text' + String(textIndex));
     $expandTextBar.mouseover(function() {
-      $(this).stop().animate({color: '#FFB74D', backgroundColor: 'rgba(70, 70, 70, 0.7)'}, 150)});
+      $(this).stop().animate({color: '#FFB74D', backgroundColor: '#666'}, 150)});
     $expandTextBar.mouseout(function() {
-      $(this).stop().animate({color: '#CFD8DC', backgroundColor: 'rgba(70, 70, 70, 0)'}, 400)});
+      $(this).stop().animate({color: '#CFD8DC', backgroundColor: '#444'}, 300)});
   }
 }
 
 function expandContractTextBar() {
   var $textBar = $('#textBar');
-  if ($textBar.css('height') == 44) $textBar.animate({height: '250px'}, 150);
+  if ($textBar.css('height') == '44px') $textBar.animate({height: '250px'}, 150);
   else $textBar.animate({height: '44px'}, 100);
 }
