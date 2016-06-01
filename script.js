@@ -306,9 +306,9 @@ function setText() {
     var textIndex = Math.floor((scrollPosition / (windowHeight * scrollMultiplier) - 0.3));
     $('#textBar').load(currentPage + '/text' + String(textIndex));
     $expandTextBar.mouseover(function() {
-      $(this).stop().animate({color: '#FFB74D', backgroundColor: '#666'}, 150)});
+      $(this).stop().animate({color: '#FFB74D', backgroundColor: '#555'}, 150)});
     $expandTextBar.mouseout(function() {
-      $(this).stop().animate({color: '#CFD8DC', backgroundColor: '#444'}, 300)});
+      $(this).stop().animate({color: '#CFD8DC', backgroundColor: '#333'}, 300)});
   }
 }
 
