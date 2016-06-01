@@ -242,5 +242,6 @@ h4 {
   padding-top: 8px;
   padding-bottom: 11px;
   cursor: pointer;
+  display: none;
   z-index: 2;
 }
