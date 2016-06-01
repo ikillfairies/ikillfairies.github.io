@@ -314,6 +314,12 @@ function setText() {
 
 function expandContractTextBar() {
   var $textBar = $('#textBar');
-  if ($textBar.css('height') == '44px') $textBar.animate({height: '350px'}, 125);
-  else $textBar.animate({height: '44px'}, 100);
+  if ($textBar.css('height') == '44px') {
+    $('#expandTextBar').removeClass('fa fa-angle-up').addClass('fa fa-angle-down')
+    $textBar.animate({height: '350px'}, 125);
+  }
+  else {
+    $('#expandTextBar').removeClass('fa fa-angle-down').addClass('fa fa-angle-up')
+    $textBar.animate({height: '44px'}, 100);
+  }
 }
