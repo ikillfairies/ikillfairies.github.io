@@ -298,11 +298,11 @@ function setVariables() {
 
 function setText() {
   if (scrollPosition < windowHeight && $('#textBar').css('display') == 'block') {
-    $('#textBar').hide();
+    $('#textBar, #expandTextBar').hide();
   }
   else if (scrollPosition >= windowHeight) {
     var $expandTextBar = $('#expandTextBar');
-    $('#textBar').show();
+    $('#textBar, #expandTextBar').show();
     var textIndex = Math.floor((scrollPosition / (windowHeight * scrollMultiplier) - 0.3));
     $('#textBar').load(currentPage + '/text' + String(textIndex));
     $expandTextBar.mouseover(function() {
@@ -314,6 +314,6 @@ function setText() {
 
 function expandContractTextBar() {
   var $textBar = $('#textBar');
-  if ($textBar.css('height') == '44px') $textBar.animate({height: '250px'}, 150);
+  if ($textBar.css('height') == '44px') $textBar.animate({height: '350px'}, 125);
   else $textBar.animate({height: '44px'}, 100);
 }
