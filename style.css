@@ -159,9 +159,10 @@ h1 {
 @media all and (min-width: 800px) { h1{ width: 760px; font-size: 100px; }}
 
 h2 {
-  text-align: right;
-  margin-top: 7px;
+  text-align: left;
+  margin-top: 8px;
   margin-bottom: -8px;
+  margin-left: 20px;
   font-size: 22px;
   font-weight: 100;
   color: #FFB74D;
@@ -173,8 +174,9 @@ h2 {
 }
 
 h3 {
-  text-align: right;
+  text-align: left;
   margin-bottom: -10px;
+  margin-left: 20px;
   font-size: 17px;
   font-weight: 100;
   line-height: 1.4;
@@ -213,29 +215,6 @@ h4 {
   display: none;
 }
 
-#textBarLeft {
-  position: fixed;
-  display: inline-block;
-}
-@media all and (min-width: 0px)    { #textBarLeft{ width: 250px; }}
-@media all and (min-width: 1000px) { #textBarLeft{ width: 25%    }}
-
-#textBarMiddle {
-  position: fixed;
-  display: inline-block;
-}
-@media all and (min-width: 0px)    { #textBarMiddle { margin-left: 250px; width: 400px; }}
-@media all and (min-width: 650px)  { #textBarMiddle { margin-left: 250px; width: 65%;   }}
-@media all and (min-width: 1000px) { #textBarMiddle { margin-left: 25%;   width: 50%;   }}
-
-#textBarRight {
-  position: fixed;
-  display: inline-block;
-  text-align: left;
-}
-@media all and (min-width: 0px)    { #textBarRight{ margin-left: 650px; width: 250px; }}
-@media all and (min-width: 1000px) { #textBarRight{ margin-left: 75%;   width: 25%    }}
-
 .description {
   font-size: 17px;
   margin-top: 11px;
@@ -244,10 +223,24 @@ h4 {
   text-align: left;
 }
 
+.imageInfo {
+  position: fixed;
+  color: #888;
+  bottom: 0px;
+  right: 30px;
+  text-align: right;
+}
+
 #expandTextBar {
+  position: fixed;
+  background-color: #444;
+  bottom: 0px;
+  right: 0px;
   font-size: 25px;
   padding: 17px;
   padding-top: 8px;
   padding-bottom: 11px;
   cursor: pointer;
 }
+@media all and (min-width: 0px)    { #expandTextBar{ margin-left: 650px; width: 250px; }}
+@media all and (min-width: 1000px) { #expandTextBar{ margin-left: 75%;   width: 25%    }}

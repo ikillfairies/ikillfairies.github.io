@@ -14,4 +14,5 @@
   <div class="bg" id="bg11"></div>
   <div class="bg" id="bg12"></div>
 </div>
+<i id="expandTextBar" class="fa fa-angle-up" aria-hidden="true" onclick="expandContractTextBar()"></i>
 <div id="textBar"></div>
