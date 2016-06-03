@@ -1,6 +1,6 @@
 var bgDelay = 600;          // Transition delay between pages in miliseconds
 var textDelay = 275;        // Transition delay for text (should be < bgDelay / 2 for full fade out and fade in)
-var scrollMultiplier = 1.8; // Multiplier for how much scroll height each bg div gets
+var scrollMultiplier = 1.7; // Multiplier for how much scroll height each bg div gets
 var locked = false;         // Page Transition lock
 var currentPage;            // Page you're currently on
 var pageType;               // Current page type. Either 'travel' or 'normal'
@@ -300,16 +300,16 @@ function setText() {
   var $textBar = $('#textBar');
   var $expandTextBar = $('#expandTextBar');
   if (scrollPosition < windowHeight && $('#textBar').css('display') == 'block') {
-    $textBar.hide();
-    $expandTextBar.hide();
+    $textBar.hide(250);
+    $expandTextBar.hide(250);
   }
   else if (scrollPosition >= windowHeight) {
     if (window.matchMedia('(max-width: 749px)').matches) {
       $textBar.css({'height': '44px', 'padding-bottom': '0px'});
       $expandTextBar.hide().removeClass('fa fa-angle-down').addClass('fa fa-angle-up');
     }
-    else $expandTextBar.show();
-    $textBar.show();
+    else $expandTextBar.show(200);
+    $textBar.show(200);
     var textIndex = Math.floor((scrollPosition / (windowHeight * scrollMultiplier) - 0.3));
     $('#textBar').load(currentPage + '/text' + String(textIndex));
     $expandTextBar.mouseover(function() {
