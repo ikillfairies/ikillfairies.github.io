@@ -297,14 +297,19 @@ function setVariables() {
 }
 
 function setText() {
+  var $textBar = $('#textBar');
+  var $expandTextBar = $('#expandTextBar');
   if (scrollPosition < windowHeight && $('#textBar').css('display') == 'block') {
-    $('#textBar, #expandTextBar').hide();
+    $textBar.hide();
+    $expandTextBar.hide();
   }
   else if (scrollPosition >= windowHeight) {
-    var $expandTextBar = $('#expandTextBar');
-    if (window.matchMedia('(max-width: 750px)').matches) $expandTextBar.click().hide();
+    if (window.matchMedia('(max-width: 750px)').matches) {
+      $textBar.hide();
+      $expandTextBar.hide();
+    }
     else $expandTextBar.show();
-    $('#textBar').show();
+    $textBar.show();
     var textIndex = Math.floor((scrollPosition / (windowHeight * scrollMultiplier) - 0.3));
     $('#textBar').load(currentPage + '/text' + String(textIndex));
     $expandTextBar.mouseover(function() {
