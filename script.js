@@ -302,8 +302,8 @@ function setText() {
   }
   else if (scrollPosition >= windowHeight) {
     var $expandTextBar = $('#expandTextBar');
-    if (window.matchMedia('(max-width: 750px)').matches) { $#expandTextBar.click().hide(); }
-    else $expandTextBar.show()
+    if (window.matchMedia('(max-width: 750px)').matches) $#expandTextBar.click().hide();
+    else $expandTextBar.show();
     $('#textBar').show();
     var textIndex = Math.floor((scrollPosition / (windowHeight * scrollMultiplier) - 0.3));
     $('#textBar').load(currentPage + '/text' + String(textIndex));
