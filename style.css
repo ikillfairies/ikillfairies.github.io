@@ -155,8 +155,8 @@ h1 {
   font-weight: 300;
   opacity: 1;
 }
-@media all and (min-width: 0px)   { h1{ width: 95%;   font-size: 13vw;  }}
-@media all and (min-width: 800px) { h1{ width: 760px; font-size: 100px; }}
+@media all and (min-width: 0px)   {h1{ width: 95%;   font-size: 13vw;  }}
+@media all and (min-width: 800px) {h1{ width: 760px; font-size: 100px; }}
 
 h2 {
   text-align: left;
@@ -171,6 +171,8 @@ h2 {
   -ms-user-select: text;
   user-select: text;
 }
+@media all and (min-width: 0px)   {h4{ text-align: center; }}
+@media all and (min-width: 750px) {h4{ text-align: left;   }}
 
 h3 {
   text-align: left;
@@ -194,8 +196,8 @@ h4 {
   font-weight: 300;
   opacity: 1;
 }
-@media all and (min-width: 0px)   { h4{ width: 95%;   }}
-@media all and (min-width: 800px) { h4{ width: 760px; }}
+@media all and (min-width: 0px)   {h4{ width: 95%;   }}
+@media all and (min-width: 800px) {h4{ width: 760px; }}
 
 .contactText {
   text-align: center;
@@ -211,15 +213,14 @@ h4 {
   z-index: 1;
   display: none;
 }
-@media all and (max-width: 750px)   { #textBar{ height: 44px; }}
 
 .description {
   margin-right: 20px;
   margin-left: 20px;
   text-align: justify;
 }
-@media all and (min-width: 0px)   { .description{ display: none;  }}
-@media all and (min-width: 750px) { .description{ display: block; }}
+@media all and (min-width: 0px)   {.description{ display: none;  }}
+@media all and (min-width: 750px) {.description{ display: block; }}
 
 .imageInfo {
   position: fixed;
@@ -230,8 +231,8 @@ h4 {
   font-size: 17px;
   text-align: right;
 }
-@media all and (min-width: 0px)   { .imageInfo{ display: none;  }}
-@media all and (min-width: 750px) { .imageInfo{ display: block; }}
+@media all and (min-width: 0px)   {.imageInfo{ display: none;  }}
+@media all and (min-width: 750px) {.imageInfo{ display: block; }}
 
 #expandTextBar {
   position: fixed;
@@ -246,5 +247,3 @@ h4 {
   display: none;
   z-index: 2;
 }
-@media all and (min-width: 0px)   { #expandTextBar{ display: none;  }}
-@media all and (min-width: 750px) { #expandTextBar{ display: block; }}

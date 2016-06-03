@@ -305,7 +305,7 @@ function setText() {
   }
   else if (scrollPosition >= windowHeight) {
     if (window.matchMedia('(max-width: 750px)').matches) {
-      $textBar.hide();
+      $textBar.css({'height': '44px'});
       $expandTextBar.hide();
     }
     else $expandTextBar.show();
