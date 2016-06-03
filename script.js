@@ -305,7 +305,7 @@ function setText() {
   }
   else if (scrollPosition >= windowHeight) {
     if (window.matchMedia('(max-width: 750px)').matches) {
-      $textBar.css({'height': '44px'});
+      $textBar.css({'height': '44px'}).removeClass('fa fa-angle-down').addClass('fa fa-angle-up');
       $expandTextBar.hide();
     }
     else $expandTextBar.show();
@@ -322,11 +322,11 @@ function setText() {
 function expandContractTextBar() {
   var $textBar = $('#textBar');
   if ($textBar.css('height') == '44px') {
-    $('#expandTextBar').removeClass('fa fa-angle-up').addClass('fa fa-angle-down')
+    $('#expandTextBar').removeClass('fa fa-angle-up').addClass('fa fa-angle-down');
     $textBar.animate({height: '350px'}, 125);
   }
   else {
-    $('#expandTextBar').removeClass('fa fa-angle-down').addClass('fa fa-angle-up')
+    $('#expandTextBar').removeClass('fa fa-angle-down').addClass('fa fa-angle-up');
     $textBar.animate({height: '44px'}, 100);
   }
 }

@@ -171,8 +171,8 @@ h2 {
   -ms-user-select: text;
   user-select: text;
 }
-@media all and (min-width: 0px)   {h4{ text-align: center; }}
-@media all and (min-width: 750px) {h4{ text-align: left;   }}
+@media all and (min-width: 0px)   {h2{ text-align: center; }}
+@media all and (min-width: 750px) {h2{ text-align: left;   }}
 
 h3 {
   text-align: left;
