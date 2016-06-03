@@ -247,11 +247,6 @@ var numDivs;
 $(window).resize(function() { 
   setOpacity();
   setText();
-  if (window.matchMedia('(max-width: 750px)').matches) {
-    $('#textBar').animate({height: '44px'}, 100);
-    $('#expandTextBar').hide();
-  }
-  else $('#expandTextBar').show();
 });
 
 /* Set the opacity whenever scrollbar location changes */
@@ -307,7 +302,9 @@ function setText() {
   }
   else if (scrollPosition >= windowHeight) {
     var $expandTextBar = $('#expandTextBar');
-    $('#textBar, #expandTextBar').show();
+    if (window.matchMedia('(max-width: 750px)').matches) { $#expandTextBar.click().hide(); }
+    else $expandTextBar.show()
+    $('#textBar').show();
     var textIndex = Math.floor((scrollPosition / (windowHeight * scrollMultiplier) - 0.3));
     $('#textBar').load(currentPage + '/text' + String(textIndex));
     $expandTextBar.mouseover(function() {
