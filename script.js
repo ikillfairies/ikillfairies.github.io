@@ -323,8 +323,9 @@ function expandContractTextBar() {
   var $textBar = $('#textBar');
   if ($textBar.css('height') == '44px') {
     $('#expandTextBar').removeClass('fa fa-angle-up').addClass('fa fa-angle-down');
-    var tempHeight = $('#textBar').css({'height': 'auto'}).height(); $('#textBar').height('44px');
-    $textBar.animate({height: tempheight + 'px', paddingBottom: '44px'}, 125).css({'height': 'auto'});
+    var tempHeight = $('#textBar').css({'height': 'auto'}).height(); 
+    $textBar.height('44px');
+    $textBar.animate({height: tempHeight + 'px', paddingBottom: '44px'}, 125).css({'height': 'auto'});
   }
   else {
     $('#expandTextBar').removeClass('fa fa-angle-down').addClass('fa fa-angle-up');
