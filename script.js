@@ -304,7 +304,7 @@ function setText() {
     $expandTextBar.hide();
   }
   else if (scrollPosition >= windowHeight) {
-    if (window.matchMedia('(max-width: 750px)').matches) {
+    if (window.matchMedia('(max-width: 749px)').matches) {
       $textBar.css({'height': '44px'});
       $expandTextBar.hide().removeClass('fa fa-angle-down').addClass('fa fa-angle-up');
     }
