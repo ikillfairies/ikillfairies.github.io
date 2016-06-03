@@ -247,6 +247,11 @@ var numDivs;
 $(window).resize(function() { 
   setOpacity();
   setText();
+  if (window.matchMedia('(max-width: 750px)').matches) {
+    $('#textBar').animate({height: '44px'}, 100);
+    $('#expandTextBar').hide();
+  }
+  else $('#expandTextBar').show();
 });
 
 /* Set the opacity whenever scrollbar location changes */
