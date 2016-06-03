@@ -305,7 +305,7 @@ function setText() {
   }
   else if (scrollPosition >= windowHeight) {
     if (window.matchMedia('(max-width: 749px)').matches) {
-      $textBar.css({'height': '44px'});
+      $textBar.css({'height': '44px', 'padding-bottom': '0px'});
       $expandTextBar.hide().removeClass('fa fa-angle-down').addClass('fa fa-angle-up');
     }
     else $expandTextBar.show();
@@ -325,7 +325,7 @@ function expandContractTextBar() {
     $('#expandTextBar').removeClass('fa fa-angle-up').addClass('fa fa-angle-down');
     var tempHeight = $textBar.css({'height': 'auto'}).height(); 
     $textBar.height('44px').animate({height: tempHeight + 'px', paddingBottom: '44px'}, 125);
-    setTimeout(function() { $textBar.css({'height': 'auto'}); }, 125);
+    setTimeout(function() { $textBar.css({'height': 'auto'}); }, 150);
   }
   else {
     $('#expandTextBar').removeClass('fa fa-angle-down').addClass('fa fa-angle-up');
