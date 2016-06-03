@@ -211,6 +211,7 @@ h4 {
   z-index: 1;
   display: none;
 }
+@media all and (max-width: 750px)   { #textBar{ height: 44px; }}
 
 .description {
   margin-right: 20px;
@@ -245,3 +246,5 @@ h4 {
   display: none;
   z-index: 2;
 }
+@media all and (min-width: 0px)   { #expandTextBar{ display: none;  }}
+@media all and (min-width: 750px) { #expandTextBar{ display: block; }}
