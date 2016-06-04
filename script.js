@@ -189,7 +189,10 @@ function setTravelContent(page, switchPage) {
     var $bg1 = $('#bg1');
     $bg1.css({'opacity': '0'});
     $bg1.css('background', 'url(./' + page + '/bg1.jpg) no-repeat center center').css('background-size', 'cover');
-
+    $('#expandTextBar').mouseover(function() {
+      $(this).stop().animate({color: '#FFB74D', backgroundColor: '#555'}, 150)});
+    $('#expandTextBar').mouseout(function() {
+      $(this).stop().animate({color: '#CFD8DC', backgroundColor: '#333'}, 300)});
   }, bgDelay);
 }
 
@@ -312,10 +315,6 @@ function setText() {
     $textBar.show(200);
     var textIndex = Math.floor((scrollPosition / (windowHeight * scrollMultiplier) - 0.3));
     $('#textBar').load(currentPage + '/text' + String(textIndex));
-    $expandTextBar.mouseover(function() {
-      $(this).stop().animate({color: '#FFB74D', backgroundColor: '#555'}, 150)});
-    $expandTextBar.mouseout(function() {
-      $(this).stop().animate({color: '#CFD8DC', backgroundColor: '#333'}, 300)});
   }
 }
 
