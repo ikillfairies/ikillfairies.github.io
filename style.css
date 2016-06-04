@@ -130,8 +130,8 @@ body {
   margin-bottom: 3px;
   padding-top: 15px;
   padding-bottom: 14px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 22px;
+  padding-right: 22px;
   font-size: 16px;
   line-height: 1;
   cursor: pointer;
@@ -160,7 +160,7 @@ h1 {
 
 h2 {
   text-align: left;
-  margin-top: 8px;
+  margin-top: 9px;
   margin-left: 20px;
   font-size: 22px;
   font-weight: 100;
@@ -192,7 +192,7 @@ h4 {
   margin-bottom: 5vh;
   line-height: 1.5;
   text-align: justify;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 300;
   opacity: 1;
 }
@@ -228,7 +228,7 @@ h4 {
   bottom: 12px;
   right: 70px;
   margin: 0px;
-  font-size: 17px;
+  font-size: 15px;
   text-align: right;
 }
 @media all and (min-width: 0px)   {.imageInfo{ display: none;  }}
