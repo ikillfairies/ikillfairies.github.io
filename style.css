@@ -28,8 +28,8 @@ body {
   position: absolute;
   display: table;
   min-height: 600px;
-  height: 100%;
   width: 100%;
+  height: 100%;
   opacity: 0;
 }
 
@@ -46,15 +46,15 @@ body {
   position: absolute;
   display: table;
   min-height: 600px;
-  height: 100%;
   width: 100%;
+  height: 100%;
 }
 
 #content {
   position: absolute;
   display: table;
-  height: 100%;
   width: 100%;
+  height: 100%;
   -moz-user-select: text;
   -khtml-user-select: text;
   -webkit-user-select: text;
@@ -75,7 +75,7 @@ body {
 
 .bg {
   position: fixed;
-  width: 100%;
+  width: 100vw; /* For some reason in Chrome the bg image appears blurry if I use 100%, but 100vw works, idk why */
   height: 100%;
 }
 
