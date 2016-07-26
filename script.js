@@ -57,7 +57,7 @@ function navLink(page) {
     $('.button.active').stop().animate({ // Fade out the active button
       color: '#CFD8DC', backgroundColor: 'rgba(80, 85, 90, 0.2)'}, textDelay).removeClass('active');
     setTimeout(function() { $('body').css({'overflow-y': '', 'height': '100%'}); }, textDelay);
-    if (scrollPosition >= 1000) { // Drop the overlay div down while transitioning (looks kinda cool?)
+    if (scrollPosition >= 1000) {        // Drop the overlay div down while transitioning (looks kinda cool?)
       $('#overlay, .bgTransition').css({'position': 'fixed', 'top': '-100%'}).animate({top: '0px'}, textDelay);
       setContent(page, true);
       setBG(getRandomBG(page));
@@ -73,7 +73,7 @@ function navLink(page) {
     setTimeout(function() {
       $('#overlay, .bgTransition').css({'position':' absolute', 'top': ''});
       $('body').css({'overflow-y': '', 'height': '100%'});
-      setTravelBar();              // No parameters means all buttons are reset unless pageType == travel
+      setTravelBar();          // No parameters means all buttons are reset unless pageType == travel
     }, bgDelay); 
   }
   else {
@@ -81,7 +81,7 @@ function navLink(page) {
     setBG(getRandomBG(page));
   }
   pageType = 'normal';
-  toggleTravelBar();       // Set travelBar visibility depending on page being loaded
+  toggleTravelBar();           // Set travelBar visibility depending on page being loaded
   $('.navButton').unbind();    // Disable hover effects for navBar during page transition
   if (page != $('.navButton.active').prop('id')) {                                // No animate if already active
     $('.navButton.active').stop().animate({color: '#CFD8DC'}, bgDelay);           // Fade out current active link
@@ -97,27 +97,27 @@ function navLink(page) {
 function travelTo(page, backPressed, switchPage) {
   if (locked || currentPage == page) return;
   locked = true;
-  currentPage = page;               // Update global page variable to whatever the new page is
-  pageType = 'travel';
-  if (scrollPosition > 0) {
-    $('html, body').animate({scrollTop: 0}, textDelay);
-    setTimeout(function() {         // Scroll to the top of the page before page transition
-      $('#divStack').css({'display': 'none'});
-      toggleTravelBar();            // Set travelBar visibility depending on page being loaded
-      setBG(page + '/bg0.jpg');     // Set the new background
-      $('.button').unbind();        // No mouseover effects on the buttons while transitioning pages
-      $('.button.active').animate({ // Fade out old active button
-        color: '#CFD8DC', backgroundColor: 'rgba(80, 85, 90, 0.2)'}, bgDelay).removeClass('active');
-      $('#' + page).animate({       // Fade in new active button
-        color: '#FFB74D', backgroundColor: 'rgba(35, 35, 35, 0.9)'}, bgDelay).addClass('active');
-      setTravelContent(page, switchPage);
-      if (backPressed != true) window.history.pushState({urlPath: '/' + page}, '', '/' + page + '.html');
-      setTimeout(function() { 
-        setTravelBar(page); 
-        setTimeout(function() { locked = false; }, bgDelay); // Release lock after page transition
-      }, bgDelay);
-    }, textDelay);
-  }
+  currentPage = page;             // Update global page variable to whatever the new page is
+  pageType = 'travel';            // Fadey-transitioney scroll pages
+  var scrollToTopDelay = 0;
+  if (scrollPosition > 0) scrollToTopDelay = textDelay;
+  $('html, body').animate({scrollTop: 0}, textDelay);
+  setTimeout(function() {         // Scroll to the top of the page before page transition
+    $('#divStack').css({'display': 'none'});
+    toggleTravelBar();            // Set travelBar visibility depending on page being loaded
+    setBG(page + '/bg0.jpg');     // Set the new background
+    $('.button').unbind();        // No mouseover effects on the buttons while transitioning pages
+    $('.button.active').animate({ // Fade out old active button
+      color: '#CFD8DC', backgroundColor: 'rgba(80, 85, 90, 0.2)'}, bgDelay).removeClass('active');
+    $('#' + page).animate({       // Fade in new active button
+      color: '#FFB74D', backgroundColor: 'rgba(35, 35, 35, 0.9)'}, bgDelay).addClass('active');
+    setTravelContent(page, switchPage);
+    if (backPressed != true) window.history.pushState({urlPath: '/' + page}, '', '/' + page + '.html');
+    setTimeout(function() { 
+      setTravelBar(page); 
+      setTimeout(function() { locked = false; }, bgDelay); // Release lock after page transition
+    }, bgDelay);
+  }, scrollToTopDelay);
 }
 
 /* Instant page transition to a normal page, called by back/forward browser buttons */
