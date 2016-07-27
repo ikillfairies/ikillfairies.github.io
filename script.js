@@ -115,8 +115,8 @@ function travelTo(page, backPressed, switchPage) {
     if (backPressed != true) window.history.pushState({urlPath: '/' + page}, '', '/' + page + '.html');
     setTimeout(function() { 
       setTravelBar(page); 
-      locked = false; // Release lock after page transition
-    }, 2 * bgDelay);
+      setTimeout(function() { locked = false; }, bgDelay); // Release lock after page transition
+    }, bgDelay);
   }, scrollToTopDelay);
 }
 
