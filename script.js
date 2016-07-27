@@ -115,8 +115,8 @@ function travelTo(page, backPressed, switchPage) {
     if (backPressed != true) window.history.pushState({urlPath: '/' + page}, '', '/' + page + '.html');
     setTimeout(function() { 
       setTravelBar(page); 
-      setTimeout(function() { locked = false; }, bgDelay); // Release lock after page transition
-    }, bgDelay);
+      locked = false; // Release lock after page transition
+    }, 2 * bgDelay);
   }, scrollToTopDelay);
 }
 
@@ -264,7 +264,7 @@ $(window).scroll(function() {
   setText();
 });
 
-/* Fade effect between backgrounds */
+/* Fade effect between backgrounds when scrolling */
 function setOpacity() {
   setVariables(); 
   var $currentBG = $('#bg' + (divIndex)); // String + Int lol.
