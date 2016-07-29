@@ -150,7 +150,6 @@ function fastTravelTo(page) {
     $('#bg1').css({'opacity': '0'});
     $('#bg1').css('background', 'url(./' + page + '/bg1.jpg) no-repeat center center').css('background-size', 'cover');
     $('#divStack').css({'display': 'block'});
-
   }, textDelay);
 }
 
@@ -305,6 +304,7 @@ function setVariables() {
   upperBound = lowerBound + windowHeight;
 }
 
+/* Load the text content from a text file based on current scrollbar position */
 function setText() {
   var $textBar = $('#textBar');
   var $expandTextBar = $('#expandTextBar');
@@ -319,21 +319,21 @@ function setText() {
     }
     else $expandTextBar.show(200);
     $textBar.show(200);
-    var textIndex = Math.floor((scrollPosition / (windowHeight * scrollMultiplier) - 0.3));
+    var textIndex = Math.floor((scrollPosition / (windowHeight * scrollMultiplier) - 0.3)) + 1;
     $('#textBar').load(currentPage + '/text' + String(textIndex));
   }
 }
 
 function expandContractTextBar() {
   var $textBar = $('#textBar');
-  if ($textBar.css('height') == '44px') {
-    $('#expandTextBar').removeClass('fa fa-angle-up').addClass('fa fa-angle-down');
-    var tempHeight = $textBar.css({'height': 'auto'}).height(); 
-    $textBar.height('44px').animate({height: tempHeight + 'px', paddingBottom: '44px'}, 125);
-    setTimeout(function() { $textBar.css({'height': 'auto'}); }, 150);
+  if ($textBar.height() == '44px') { // textBar is currently minimized, expand it
+    $('#expandTextBar').removeClass('fa fa-angle-up').addClass('fa fa-angle-down'); // Flip arrow to point down
+    var tempHeight = $textBar.css({'height': 'auto'}).height();                     // Cuz of really stupid CSS bullshit
+    $textBar.height('44px').animate({height: tempHeight + 'px', paddingBottom: '44px'}, 125); // BS jQuery/CSS shit here
+    setTimeout(function() { $textBar.css({'height': 'auto'}); }, 150);              // 150 ms delay for expand
   }
-  else {
-    $('#expandTextBar').removeClass('fa fa-angle-down').addClass('fa fa-angle-up');
-    $textBar.animate({height: '44px', paddingBottom: '0px'}, 100);
+  else { // textBar is currently expanded, contract it
+    $('#expandTextBar').removeClass('fa fa-angle-down').addClass('fa fa-angle-up'); // Flip arrow to point up
+    $textBar.animate({height: '44px', paddingBottom: '0px'}, 100);                  // 100 ms delay for contract
   }
 }
