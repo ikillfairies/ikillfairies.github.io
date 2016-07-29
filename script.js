@@ -326,7 +326,7 @@ function setText() {
 
 function expandContractTextBar() {
   var $textBar = $('#textBar');
-  if ($textBar.height() == '44px') { // textBar is currently minimized, expand it
+  if ($textBar.height() == 44) { // textBar is currently minimized, expand it
     $('#expandTextBar').removeClass('fa fa-angle-up').addClass('fa fa-angle-down'); // Flip arrow to point down
     var tempHeight = $textBar.css({'height': 'auto'}).height();                     // Cuz of really stupid CSS bullshit
     $textBar.height('44px').animate({height: tempHeight + 'px', paddingBottom: '44px'}, 125); // BS jQuery/CSS shit here
