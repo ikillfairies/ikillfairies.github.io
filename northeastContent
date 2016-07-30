@@ -1,5 +1,5 @@
 <h1 style="opacity: 1;">NORTHEAST</h1>
-<h4 style="opacity: 1;">Adventures in the Northeast! But mostly actually just New York since that's where I live now. Speaking of New York, alot of Manhattan really smells like piss and trash. This might be unhealthy.</h4>
+<h4 style="opacity: 1;">Adventures in the Northeast (but mostly actually just New York since that's where I live now), a place completely different from the Midwest. New York is an interesting place, and although Manhattan smells like piss and trash, it has it's 'charm'. This might be unhealthy.</h4>
 <div id="divStack">
   <div class="bg" id="bg1"></div>
   <div class="bg" id="bg2"></div>
@@ -9,10 +9,6 @@
   <div class="bg" id="bg6"></div>
   <div class="bg" id="bg7"></div>
   <div class="bg" id="bg8"></div>
-  <div class="bg" id="bg9"></div>
-  <div class="bg" id="bg10"></div>
-  <div class="bg" id="bg11"></div>
-  <div class="bg" id="bg12"></div>
 </div>
 <i id="expandTextBar" class="fa fa-angle-up" aria-hidden="true" onclick="expandContractTextBar()"></i>
 <div id="textBar"></div>
