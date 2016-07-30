@@ -8,6 +8,7 @@
   <div class="bg" id="bg5"></div>
   <div class="bg" id="bg6"></div>
   <div class="bg" id="bg7"></div>
+  <div class="bg" id="bg8"></div>
 </div>
 <i id="expandTextBar" class="fa fa-angle-up" aria-hidden="true" onclick="expandContractTextBar()"></i>
 <div id="textBar"></div>
