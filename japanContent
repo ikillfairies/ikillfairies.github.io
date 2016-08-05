@@ -1,0 +1,24 @@
+<h1 style="opacity: 1;">JAPAN</h1>
+<h4 style="opacity: 1;">Pictures from Japan! Tokyo, Kyoto, and Osaka taken in December and January of 2015 to 2016. Japan is best tourist place ever, and their 711's are the shit.</h4>
+<div id="divStack">
+  <div class="bg" id="bg1"></div>
+  <div class="bg" id="bg2"></div>
+  <div class="bg" id="bg3"></div>
+  <div class="bg" id="bg4"></div>
+  <div class="bg" id="bg5"></div>
+  <div class="bg" id="bg6"></div>
+  <div class="bg" id="bg7"></div>
+  <div class="bg" id="bg8"></div>
+  <div class="bg" id="bg9"></div>
+  <div class="bg" id="bg10"></div>
+  <div class="bg" id="bg11"></div>
+  <div class="bg" id="bg12"></div>
+  <div class="bg" id="bg13"></div>
+  <div class="bg" id="bg14"></div>
+  <div class="bg" id="bg15"></div>
+  <div class="bg" id="bg16"></div>
+  <div class="bg" id="bg17"></div>
+  <div class="bg" id="bg18"></div>
+</div>
+<i id="expandTextBar" class="fa fa-angle-up" aria-hidden="true" onclick="expandContractTextBar()"></i>
+<div id="textBar"></div>
