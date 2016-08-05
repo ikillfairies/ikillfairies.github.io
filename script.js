@@ -197,7 +197,7 @@ function setTravelContent(page, switchPage) {
     $('#expandTextBar').mouseover(function() {
       $(this).stop().animate({color: '#E0CDAC', backgroundColor: '#555'}, 150)});
     $('#expandTextBar').mouseout(function() {
-      $(this).stop().animate({color: '#FFB74D', backgroundColor: '#333'}, 300)});
+      $(this).stop().animate({color: '#FFB74D', backgroundColor: '#444'}, 300)});
   }, bgDelay);
 }
 
