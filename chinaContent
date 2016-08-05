@@ -1,0 +1,21 @@
+<h1 style="opacity: 1;">CHINA</h1>
+<h4 style="opacity: 1;">Photos from my adventures in Shanghai and Hong Kong.</h4>
+<div id="divStack">
+  <div class="bg" id="bg1"></div>
+  <div class="bg" id="bg2"></div>
+  <div class="bg" id="bg3"></div>
+  <div class="bg" id="bg4"></div>
+  <div class="bg" id="bg5"></div>
+  <div class="bg" id="bg6"></div>
+  <div class="bg" id="bg7"></div>
+  <div class="bg" id="bg8"></div>
+  <div class="bg" id="bg9"></div>
+  <div class="bg" id="bg10"></div>
+  <div class="bg" id="bg11"></div>
+  <div class="bg" id="bg12"></div>
+  <div class="bg" id="bg13"></div>
+  <div class="bg" id="bg14"></div>
+  <div class="bg" id="bg15"></div>
+</div>
+<i id="expandTextBar" class="fa fa-angle-up" aria-hidden="true" onclick="expandContractTextBar()"></i>
+<div id="textBar"></div>
