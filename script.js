@@ -125,8 +125,8 @@ function fastNavLink(page) {
   currentPage = page;
   pageType = 'normal';
   $('#content').html('');
-  var bgImage = getRandomBG(page);
-  $('#bgTop, #bgBot').css({'background-image': 'url(' + bgImage + '.jpg)'});
+  var bgImage = getRandomBG(page); // .jpg is added by getRandomBG(page)
+  $('#bgTop, #bgBot').css({'background-image': 'url(' + bgImage + ')'});
   $('#content').load(page + 'Content');
   $('body').css({'height': '100%'});
   toggleTravelBar();
@@ -139,7 +139,7 @@ function fastTravelTo(page) {
   currentPage = page;
   pageType = 'travel';
   $('#content').html('');
-  $('#bgtop, #bgBot').css({'background-image': 'url(' + page + '/bg0.jpg)'});
+  $('#bgTop, #bgBot').css({'background-image': 'url(' + currentPage + '/bg0.jpg)'});
   $('#content').load(page + 'Content');
   toggleTravelBar();
   setTravelBar(page);
