@@ -1,5 +1,5 @@
-var bgDelay = 600;          // Transition delay between pages in miliseconds
-var textDelay = 275;        // Transition delay for text (should be < bgDelay / 2 for full fade out and fade in)
+var bgDelay = 500;          // Transition delay between pages in miliseconds
+var textDelay = 225;        // Transition delay for text (should be < bgDelay / 2 for full fade out and fade in)
 var scrollMultiplier = 1.9; // Multiplier for how much scroll height each bg div gets
 var locked = false;         // Page Transition lock
 var currentPage;            // Page you're currently on
