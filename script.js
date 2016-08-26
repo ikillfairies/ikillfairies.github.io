@@ -1,6 +1,6 @@
 var bgDelay = 600;          // Transition delay between pages in miliseconds
 var textDelay = 275;        // Transition delay for text (should be < bgDelay / 2 for full fade out and fade in)
-var scrollMultiplier = 1.7; // Multiplier for how much scroll height each bg div gets
+var scrollMultiplier = 1.9; // Multiplier for how much scroll height each bg div gets
 var locked = false;         // Page Transition lock
 var currentPage;            // Page you're currently on
 var pageType;               // Current page type. Either 'travel' or 'normal'
@@ -23,8 +23,8 @@ $(document).ready(function() {
 $(window).bind('popstate', function() {                     // Executed on browser back button press
   var page = location.pathname.split('/')[1].split('.')[0]; // Some string manipulation crap to get new page name
   if (page == '' || page == 'index') fastNavLink('home');
-  else if (page == 'midwest') fastTravelTo(page);
-  else fastNavLink(page);
+  else if (page == 'travel' || page == 'projects' || page == 'contact') fastNavLink(page);
+  else fastTravelTo(page);
 });
 
 /* If a user refresh, force them to top of page (unfortunately also called when leaving the page) */
@@ -134,7 +134,7 @@ function fastNavLink(page) {
   setNavBar(page);
 }
 
-/* Instant page transition to a travel pgae, called by back/forward browser buttons */
+/* Instant page transition to a travel page, called by back/forward browser buttons */
 function fastTravelTo(page) {
   currentPage = page;
   pageType = 'travel';
@@ -265,7 +265,11 @@ $(window).scroll(function() {
 
 /* Fade effect between backgrounds when scrolling */
 function setOpacity() {
-  setVariables(); 
+  scrollPosition = $(window).scrollTop();
+  windowHeight = $(window).height();
+  divIndex = Math.floor(scrollPosition / (windowHeight * scrollMultiplier)); 
+  lowerBound = divIndex * windowHeight * scrollMultiplier;
+  upperBound = lowerBound + windowHeight;
   var $currentBG = $('#bg' + (divIndex)); // String + Int lol.
   var $belowBG = $('#bg' + (divIndex + 1));
   var $2xbelowBG = $('#bg' + (divIndex + 2));
@@ -293,15 +297,6 @@ function setOpacity() {
   if (scrollPosition >= lowerBound && scrollPosition <= upperBound && divIndex != numDivs) 
     $currentBG.css({'opacity': 1 - (scrollPosition - lowerBound) / (upperBound - lowerBound), 'display': 'block'});
   else $currentBG.css({'opacity': '0', 'display': 'block'});
-}
-
-/* Set global variables here to keep setOpacity shorter (Note: these are globally declared) */
-function setVariables() {
-  scrollPosition = $(window).scrollTop();
-  windowHeight = $(window).height();
-  divIndex = Math.floor(scrollPosition / (windowHeight * scrollMultiplier)); 
-  lowerBound = divIndex * windowHeight * scrollMultiplier;
-  upperBound = lowerBound + windowHeight;
 }
 
 /* Load the text content from a text file based on current scrollbar position */
