@@ -125,8 +125,8 @@ function fastNavLink(page) {
   currentPage = page;
   pageType = 'normal';
   $('#content').html('');
-  var bgImg = getRandomBG(page);
-  $('#bgTop, #bgBot').css({'background-image': 'url(' + bgImg + ')'});
+  var bgImage = getRandomBG(page);
+  $('#bgTop, #bgBot').css({'background-image': 'url(' + bgImage + '.jpg)'});
   $('#content').load(page + 'Content');
   $('body').css({'height': '100%'});
   toggleTravelBar();
