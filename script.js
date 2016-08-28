@@ -62,9 +62,9 @@ function navLink(page) {
       setContent(page, true);
       setBG(getRandomBG(page));
     }
-    else if (scrollPosition < 1000) {
+    else if (scrollPosition < 1000) {    // If you're near the top, just scroll to the top before transitioning
       $('html, body').animate({scrollTop: 0}, textDelay);
-      setTimeout(function() { // Scroll to the top of the page before page transition
+      setTimeout(function() {
         $('#divStack').css({'display': 'none'});
         setContent(page, true); 
         setBG(getRandomBG(page));
@@ -73,16 +73,16 @@ function navLink(page) {
     setTimeout(function() {
       $('#overlay, .bgTransition').css({'position':' absolute', 'top': ''});
       $('body').css({'overflow-y': '', 'height': '100%'});
-      setTravelBar();          // No parameters means all buttons are reset unless pageType == travel
+      setTravelBar();                    // No parameters means all buttons are reset unless pageType == travel
     }, bgDelay); 
   }
   else {
     setContent(page, true);
     setBG(getRandomBG(page));
   }
-  pageType = 'normal';
-  toggleTravelBar();           // Set travelBar visibility depending on page being loaded
-  $('.navButton').unbind();    // Disable hover effects for navBar during page transition
+  pageType = 'normal';      // Transition is done, now set the new page type
+  toggleTravelBar();        // Set travelBar visibility depending on page being loaded
+  $('.navButton').unbind(); // Disable hover effects for navBar during page transition
   if (page != $('.navButton.active').prop('id')) {                                // No animate if already active
     $('.navButton.active').stop().animate({color: '#CFD8DC'}, bgDelay);           // Fade out current active link
     $('#' + page).css({'color': '#DFCDAC'}).animate({color: '#FFB74D'}, bgDelay); // Fade in new active link
@@ -175,24 +175,24 @@ function getRandomBG(page) {
   else if (page == 'contact') return page + '/bg' + String(Math.floor(1 + Math.random() * 2)) + '.jpg';  // 2 BG images
 }
 
-/* Set content on a normal page during transition */
+/* Set content on a page during transition by doing an Ajax load */
 function setContent(page, switchPage) {
   var $content = $('#content');
   var $tempDiv = $('<div>');        // Create temporary div stored in memory
   $tempDiv.load(page + 'Content');  // Load new content into $tempDiv first b/c ajax load is laggy/slow
-  if (switchPage == true) $content.stop().animate({opacity: 0}, textDelay); // Fade out current content
+  if (switchPage == true) $content.stop().animate({opacity: 0}, textDelay); // Fade out current content for page switch
   setTimeout(function() { $content.html($tempDiv.html()).stop().animate({opacity: 1}, textDelay + 50) }, textDelay - 50);
 }   
 
 /* Set content on a travel page during transition */
 function setTravelContent(page, switchPage) {
   setContent(page, switchPage);    // Load the HTML with ajax
-  setTimeout(function() { 
+  setTimeout(function() {          // Want this to run after the page transition
+    var $bg1 = $('#bg1');
     numDivs = $('.bg').length - 1; // Get # of bgDivs to set body height
     $('body').height(String((scrollMultiplier * numDivs + 1) * 100 - 1) + 'vh');
-    $('#divStack').css({'display': 'block'}); 
-    var $bg1 = $('#bg1');
-    $bg1.css({'opacity': '0'});
+    $('#divStack').css({'display': 'block'}); // Now that we can scroll, make the divStack visible
+    // $bg1.css({'opacity': '0'}); // I don't think this is necessary... lets delete it
     $bg1.css('background', 'url(./' + page + '/bg1.jpg) no-repeat center center').css('background-size', 'cover');
     $('#expandTextBar').mouseover(function() {
       $(this).stop().animate({color: '#E0CDAC', backgroundColor: '#555'}, 150)});
@@ -244,11 +244,11 @@ function setTravelBar(page) {
 /* ------------------------------------------------------------------------------------------------------------------ */
 
 /* Global variables for travel pages */
-var scrollPosition = 0;     // $(window).scrollTop() initialized to 0 (scrollbar at top of page)
-var windowHeight;           // $(window).height()
-var lowerBound;             // Lower bound of transition range
-var upperBound;             // Upper bound of transition range...
-var divIndex = 0;           // Starts at 0 always because I'm forcing scrollTop(0) on refresh
+var scrollPosition = 0; // $(window).scrollTop() initialized to 0 (scrollbar at top of page)
+var windowHeight;       // $(window).height()
+var lowerBound;         // Lower bound of transition range
+var upperBound;         // Upper bound of transition range...
+var divIndex = 0;       // Starts at 0 always because I'm forcing scrollTop(0) on refresh
 var numDivs;
 
 /* Need to account for the change in scrollbar position on window resize */
@@ -286,7 +286,7 @@ function setOpacity() {
     'background-size': 'cover',
   });
   /* For loop probably bad performance wise but only way I can think of to get around super fast scrolling edge case
-     which happens if user grabs the scrollbar and drags it to the bottom of the screen too fast, things won't load
+     which happens if user grabs the scrollbar and drags it to the bottom of the screen too fast (things won't load)
      Also need to set z-index b/c it will be out of order if user scrolls too quickly. I really hate this edge case. */
   for (var i = 0; i <= numDivs; i++) {
     if (i < divIndex) $('#bg' + String(i)).css({'opacity': '0', 'display': 'none', 'z-index': -i});
