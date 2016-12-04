@@ -7,6 +7,6 @@ $(document).ready(function() {
   $('.active').unbind();
 
   $('body').load('header');
-  $('body').append($('<div>').load('content'));
+  $('#content').load('content');
 
 });
