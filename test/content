@@ -1,15 +1,3 @@
-<div id="header">
-  <div id="title">
-    <h1>JEFFREY YAN</h1>
-  </div>
-  <div id="navBar">
-    <a class="navLink" href="">ABOUT</a>
-    <a class="navLink active" href="">TRAVELS</a>
-    <a class="navLink" href="">PROJECTS</a>
-    <a class="navLink" href="">CONTACT</a>
-  </div>
-</div>
-
 <div id="content">
   <div id="imageSlider">
     <img class="slidingImage" src="Portugal0.jpg">
