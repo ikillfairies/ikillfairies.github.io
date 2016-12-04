@@ -6,4 +6,6 @@ $(document).ready(function() {
     $(this).stop().animate({color: '#B0B0B0'}, 300); });
   $('.active').unbind();
 
+  $('body').load('content');
+
 });
