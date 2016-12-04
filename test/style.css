@@ -1,0 +1,84 @@
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* No clicking non text stuff --------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------------ */
+
+body { 
+  background-color: #424242;
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Roboto', sans-serif;
+}
+
+#header {
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 75px;
+  height: 13vh;
+}
+/* To do: Make this shit mobile friendly */
+@media all and (min-width: 0px)    { #header{width: 650px;  }}
+@media all and (min-width: 650px)  { #header{width: 100%;   }}
+@media all and (min-width: 1000px) { #header{width: 1000px; }}
+
+#title {
+  position: absolute;
+  margin-top: 5vh;
+  margin-left: 15px;
+  display: inline-block;
+  text-align: left;
+}
+
+#navBar {
+  position: absolute;
+  margin-top: calc(5vh + 35px);
+  display: inline;
+  text-align: right;
+}
+/* To do: Make this shit mobile friendly */
+@media all and (min-width: 0px)    { #navBar{width: 650px;  }}
+@media all and (min-width: 650px)  { #navBar{width: 100%;   }}
+@media all and (min-width: 1000px) { #navBar{width: 1000px; }}
+
+.navLink {
+  display: inline-block; 
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 15px;
+  color: #A0A0A0;
+  text-decoration: none;
+}
+
+.active {
+  color: #F5F5F5;
+}
+
+#content {
+  position: absolute;
+  top: calc(5vh + 75px);
+  width: 100%;
+}
+
+#imageSlider {
+  text-align: center;
+}
+
+.slidingImage {
+  width: 1000px;
+}
+/* To do: Make this shit mobile friendly */
+@media all and (min-width: 0px)    { .slidingImage{width: 650px;  }}
+@media all and (min-width: 650px)  { .slidingImage{width: 100%;   }}
+@media all and (min-width: 1000px) { .slidingImage{width: 1000px; }}
+
+h1 {
+  font-size: 30px;
+  font-weight: 300;
+  color: #D0D0D0;
+}
+
+h2 {
+  font-size: 15px;
+  font-weight: 300;
+  color: #303030;
+}
