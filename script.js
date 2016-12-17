@@ -88,8 +88,8 @@ function navLink(page) {
     $('#' + page).css({'color': '#DFCDAC'}).animate({color: '#FFB74D'}, bgDelay); // Fade in new active link
   }
   setTimeout(function() { setNavBar(page); }, bgDelay);                           // Re-enable hover effects for navBar
-  if (page == 'home') window.history.pushState({urlPath: '/index.html'}, '', '/index.html'); // Index shit
-  else window.history.pushState({urlPath: '/' + page}, '', '/' + page + '.html');            // Other pages
+  if (page == 'home') window.history.pushState({urlPath: '/index'}, '', '/index'); // Index shit
+  else window.history.pushState({urlPath: '/' + page}, '', '/' + page + '');            // Other pages
   setTimeout(function() { locked = false; }, bgDelay); // Release lock after page transition
 }
 
