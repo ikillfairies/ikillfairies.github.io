@@ -17,4 +17,5 @@ $(document).ready(function() {
       cache: false
     });
   });
+  $('#getQuote').click();
 });
