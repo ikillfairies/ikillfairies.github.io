@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
   $('#getQuote').on('click', function(e) {
     e.preventDefault();
     $.ajax( {
@@ -17,5 +18,9 @@ $(document).ready(function() {
       cache: false
     });
   });
+
   $('#getQuote').click();
+
+  $('#quote').animate({'opacity': 1}, 350);
+
 });
