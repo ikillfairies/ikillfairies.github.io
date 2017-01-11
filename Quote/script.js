@@ -18,21 +18,20 @@ function getQuote() {
       if (typeof post.custom_meta !== 'undefined' && typeof post.custom_meta.Source !== 'undefined') {
         source = post.custom_meta.Source;
       } else {
-        source = '';
+        source = 'not available';
       }
     },
     cache: false
   });
 }
 
-$('#getQuote').on('click', function(e) {
-  $('#quote').animate({'opacity': 0}, 100);
+$('#getQuote').on('click', function() {
+  $('#quote').animate({'opacity': 0}, 75);
   setTimeout(function() { 
-    $('#quoteTitle').text(title);
+    $('#quoteTitle').html(title);
     $('#quoteContent').html(content);
     $('#quoteSource').html('Source: ' + source);
-  }, 100);
-  $('#quote').delay(125).animate({'opacity': 1}, 200);
+  }, 75);
+  $('#quote').delay(75).animate({'opacity': 1}, 150);
   getQuote();
-  e.preventDefault();
 });
