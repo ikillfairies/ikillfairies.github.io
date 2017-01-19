@@ -1,0 +1,31 @@
+{
+	"trod-alias": "oe-trod",
+	"1": {
+		"08:00|08:29": "DavidBrandon^DanVanTran",
+		"08:30|13:59": "DavidBrandon^RFromhold",
+		"14:00|17:59": "KNatarajan^PHempton",
+		"18:00|19:59": "KNatarajan^THenke"
+	},
+	"2": {
+		"08:00|10:59": "Juan,SJohnson",
+		"11:00|12:59": "MHullin",
+		"13:00|15:59": "NickBL",
+		"16:00|16:59": "Ovadia",
+		"17:00|19:59": "DJ"
+	},
+	"3": {
+		"08:00|10:59": "NatashaJaffe",
+		"11:00|12:59": "Ovadia",
+		"13:00|19:59": "TPreston^MPredmore^RSteier^JDelgado^Kev^SCheung^AIngraham"
+	},
+	"4": {
+		"08:00|17:59": "TPreston^MPredmore^RSteier^JDelgado^Kev^SCheung^AIngraham",
+		"18:00|19:59": "MMurchison"
+	},
+	"5": {
+		"08:00|10:59": "ABatra",
+		"11:00|13:59": "GAllakhverdyan",
+		"14:00|16:59": "Joe",
+		"17:00|19:59": "Tim.Fitzgerald"
+	}
+}
