@@ -2,93 +2,43 @@
 <html lang="en">
 
 <head>
-  <title>David Li</title>
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet" type="text/css">
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <title>Jeffrey Yan</title>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
   <link href="style.css" rel="stylesheet" type="text/css" media="all"/>
-  <link rel="icon" href="favicon.ico">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <script src="script.js"></script>
+  <link rel="icon" type="image/png" href="favicon.png">
+
 </head>
-<body>
+<body onload="initialLoad('home', 'normal')">
 
-<div id="container">
+<div class="bgTransition" id="bgTop"></div>
+<div class="bgTransition" id="bgBot"></div>
 
-  <!-- Header and contact info -->
-  <h1>David Li</h1>
-  <div id="resume-header"> 
-    <span id="email">
-      <i class="fa fa-envelope" aria-hidden="true"></i>
-      <a href="mailto:jeffyan92@gmail.com">li.david.j1@gmail.com</a>
-    </span>
-    
-    <span id="phone">
-      <i class="fa fa-phone" aria-hidden="true"></i>
-      <a href="tel:973-342-1258">(862) 224-1655</a>
-    </span>
-  </div>
+<div id="overlay"></div>
 
-  <h2>Experience</h2>
-
-  <!-- MTIRE -->
-  <div class="section">
-    <h4 class="title">Senior Signal Processing Engineer | MITRE</h4>
-    <h4 class="date">July 2014 - Present</h4>
-    <ul>
-      <li>
-        <b>Wireless Protocol Design:</b> Designed and implemented a custom end-to-end wireless communications protocol. Some design aspects include coexistence with LTE, addressing users, error correction, segmentation-reassembly, and physical layer design aspects. Implementation consisted of creating an android application to interface with a commercial smartphone’s debugging features and writing firmware for a commercial cell tower in order to implement the protocol. Demonstrated over the air transmission of normal IP traffic from the cell tower to the mobile device.
-      </li>
-      <li>
-        <b>Cellular Lab:</b> Deployed and developed firmware for opensource GSM, UMTS, and LTE stacks in conjunction with using commercial test equipment in order to answer research questions. Research focus was primarily on the characterizing behavior of LTE in various scenarios as well as searching for vulnerabilities.
-      </li>
-      <li>
-        <b>LTE Downlink Processing:</b> Contributed to an existing C++ codebase by creating a framework to process call ladders of interest, protocol level messages, and to track users on the network. Debugged various physical layer processing issues as well.
-      </li>
-      <li>
-        <b>WNW Improvements:</b> Performed link layer analysis of the Wideband Networking Waveform (WNW) protocol to find optimal protocol parameters for various scenarios. Explored how integration of MIMO would be possible within the limitations of the current hardware and protocol.
-      </li>
-      <li>
-        <b>Ad-Hoc Radio Design:</b> Developed a physical and mac layer protocol targeted for vehicular vehicles. Designed, simulated, and implemented the custom protocol onto an embedded device. Various signal processing algorithms were creatively implemented in order to meet strict real time constraints.
-      </li>
-    </ul>
-  </div>
-
-  <!-- MITRE Intern -->
-  <div class="section">
-    <h4 class="title">Intern | MITRE</h4>
-    <h4 class="date">Summer 2013</h4>
-    <ul>
-      <li>
-        <b>Ad-Hoc Radio Research:</b> Automated the emulation of mobility scenarios with custom ad-hoc radios. Developed a toolkit for emulating mobility via an attenuator matrix, automating traffic profiles of individual radios, along with visualization and post-process analysis. Modified radio firmware to research the effects of different neighbor discovery mechanisms, addressing, and routing.
-      </li>
-    </ul>
-  </div>
-
-  <!-- Education / CMU -->
-  <h2>Education</h2>
-  <div class="section">
-    <h4 class="title">Georgia Institute of Technology | Atlanta, GA</h4>
-    <h4 class="date">2018 - Present</h4>
-    <p>Master of Science in Computer Science</p>
-
-    <h4 class="title">The Cooper Union for the Advancement of Science and Art | New York, NY</h4>
-    <h4 class="date">2014 - 2016</h4>
-    <p>Master of Engineering in Electrical Engineering</p>
-    <p>Thesis: Distributed Synchronization for Ad-Hoc Operation in LTE</p>
-
-    <h4 class="title">The Cooper Union for the Advancement of Science and Art | New York, NY</h4>
-    <h4 class="date">2010 - 2014</h4>
-    <p>Bachelor of Science in Interdisciplinary Engineering</p>
-    <p>Magna Cum Laude</p>
-  </div>
-
-  <!-- Skills -->
-  <h2>Programming Skills</h2>
-  <div class="section">
-    <p><b>Languages:</b> C/C++, Python, MATLAB, Freescale Assembly, Perl, Java, Bash</p>
-    <p><b>Technologies:</b> LTE, UMTS/GSM, WiFi, Linux, Android</p>
-  </div>  
-
+<div id="navBar">
+  <nav>
+    <a class="navButton" id="home" onclick="navLink('home')">HOME</a>
+    <a class="navButton" id="travel" onclick="navLink('travel')">TRAVEL</a>
+    <a class="navButton" id="projects" onclick="navLink('projects')">PROJECTS</a>
+    <a class="navButton" id="contact" onclick="navLink('contact')">CONTACT</a>
+  </nav>
 </div>
+
+<div id="travelBar">
+  <p id="midwest" class="button" onclick="travelTo('midwest', false, true)">MIDWEST</p>
+  <p id="northeast" class="button" onclick="travelTo('northeast', false, true)">NORTHEAST</p>
+  <p id="mexico" class="button" onclick="travelTo('mexico', false, true)">MEXICO</p>
+  <p id="china" class="button" onclick="travelTo('china', false, true)">CHINA</p>
+  <p id="japan" class="button" onclick="travelTo('japan', false, true)">JAPAN</p>
+  <p id="europe" class="button">EUROPE</p>
+</div>
+
+<div id="content"></div>
 
 </body>
 </html>
